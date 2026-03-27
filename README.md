@@ -8,7 +8,7 @@ Rafael Barbosa,
 Gabriel Lima,
 Jorge Alves,
 Davi Ito,
-Gabriel Aguiar,
+Gabriel Aguiar
 
 ## Sobre 
 Descreva o seu projeto em linhas gerais. 
