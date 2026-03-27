@@ -4,10 +4,11 @@
 
 **Integrantes do Grupo**
 
-Rafael Barbosa
-Gabriel Lima 
-Jorge Alves
-Davi Ito
+Rafael Barbosa,
+Gabriel Lima,
+Jorge Alves,
+Davi Ito,
+Gabriel Aguiar,
 
 ## Sobre 
 Descreva o seu projeto em linhas gerais. 
