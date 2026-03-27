@@ -2,6 +2,13 @@
 
 **Código da Disciplina**: IBM8936<br>
 
+**Integrantes do Grupo**
+
+Rafael Barbosa
+Gabriel Lima 
+Jorge Alves
+Davi Ito
+
 ## Sobre 
 Descreva o seu projeto em linhas gerais. 
 
