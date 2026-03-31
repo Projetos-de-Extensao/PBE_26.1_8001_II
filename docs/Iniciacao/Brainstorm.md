@@ -68,62 +68,60 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
  
 ---
  
-### 4. Outras perguntas pertinentes ao contexto
+### 4. Outras perguntas pertinentes ao context
+- Como a instituição validará se uma vaga cadastrada está de acordo com a Lei do Estágio e com as regras internas?
+- O sistema deverá permitir o gerenciamento de documentos obrigatórios, como TCE, Termo Aditivo e Termo de Rescisão?
+- O acompanhamento será apenas da candidatura ou do estágio completo, desde a aprovação até o encerramento?
+- A instituição precisará de relatórios consolidados sobre vagas, candidaturas e pendências documentais?
+ 
+## 5. Como seria a forma de adicionar as vagas de estágio?
 
-<p align = "justify">
-<b>XXXX</b> - Com a localização...
+- As empresas poderão cadastrar vagas diretamente no sistema.
+- O cadastro da vaga deverá conter título, descrição, requisitos, carga horária, bolsa, modalidade e localidade.
+- As vagas poderão passar por validação institucional antes da publicação.
+- As empresas poderão editar, pausar ou encerrar vagas já cadastradas.
  
-<b>YYYY</b> - O cliente...
- 
-<b>ZZZ</b> - O cliente...
- 
----
- 
-### 5. "Outras perguntas pertinentes ao contexto", Como seria a forma de adicionar do cliente adicionar os produtos ?
-<p align = "justify">
-<b>XXX</b> - O cliente....
-</p>
- 
-### 6. Quais informações seriam interessante para o cliente?
-<p align = "justify">
-   <b>XXX</b> - Informações...
-   
-   <b>ZZZZ</b> - O cliente usuário poderá acessar informações...
+## 6. Quais informações seriam interessantes para o cliente?
 
-   <b>WWWWs</b> - O usuário poderá ver scouts de partidas do torneio, ver as regras dos torneios, locais e data das partidas.
-   
-</p>
- 
+- Informações acadêmicas dos alunos, como curso, período, matrícula e histórico de candidaturas.
+- Informações das empresas, como nome, área de atuação e vagas publicadas.
+- Informações detalhadas das vagas, como requisitos, carga horária, bolsa e prazo de inscrição.
+- Informações documentais, como TCE, Termo Aditivo, Termo de Rescisão e pendências.
+- Relatórios gerenciais sobre estágios ativos, encerrados e vagas em aberto.
+
 ### Requisitos elicitados
  
 |ID|Descrição|
 |----|-------------|
-|BS01| O cliente...|
-|BS02| O cliente...|
-|BS03| O cliente...|
-|BS04| O cliente...|
-|BS05| O cliente...|
-|BS06| O cliente...|
-|BS07| O cliente...|
-|BS08| O cliente...|
-|BS09| O cliente...|
-|BS10| O produto...|
-|BS11| O produto...|
-|BS12| O produto...|
-|BS13| O produto...|
-|BS14| O produto...|
-|BS15| O produto...|
+|BS01| O sistema deve permitir o cadastro de alunos com informações acadêmicas, como nome, matrícula, curso e período.|
+|BS02| O sistema deve permitir o cadastro de empresas interessadas em oferecer vagas de estágio.|
+|BS03| O sistema deve permitir o cadastro de vagas de estágio com informações como título, descrição, requisitos, carga horária, bolsa e localidade.|
+|BS04| O sistema deve permitir que as empresas editem, pausem ou encerrem vagas cadastradas.|
+|BS05| O sistema deve permitir que alunos visualizem vagas de estágio disponíveis.|
+|BS06| O sistema deve permitir que alunos se candidatem às vagas cadastradas.|
+|BS07| O sistema deve permitir o acompanhamento do status da candidatura, como em análise, aprovada ou rejeitada.|
+|BS08| O sistema deve permitir a validação institucional das vagas antes da publicação.|
+|BS09| O sistema deve permitir o registro do estágio aprovado, vinculando aluno, empresa e instituição.|
+|BS10| O sistema deve permitir o upload e armazenamento de documentos obrigatórios do estágio.|
+|BS11| O sistema deve permitir o gerenciamento do Termo de Compromisso de Estágio (TCE).|
+|BS12| O sistema deve permitir o registro e controle de Termos Aditivos de estágio.|
+|BS13| O sistema deve permitir o registro do encerramento do estágio por meio do Termo de Rescisão.|
+|BS14| O sistema deve permitir o acompanhamento de pendências documentais relacionadas ao estágio.|
+|BS15| O sistema deve permitir a geração de relatórios sobre vagas, candidaturas, estágios ativos e encerrados.|
  
 ## Conclusão
 <p align = "justify">
-Através da aplicação da técnica, foi possível elicitar alguns dos primeiros requisitos do projeto.
+Através da aplicação da técnica de pesquisa, foi possível elicitar requisitos iniciais relevantes para o desenvolvimento do Sistema de Gestão de Estágios. A análise do contexto mostrou que o processo de estágio envolve não apenas a divulgação de vagas, mas também o acompanhamento institucional, o controle documental e a conformidade com a legislação vigente. Dessa forma, os requisitos levantados servem como base para a evolução do projeto, permitindo que o sistema atenda às necessidades de alunos, empresas e da instituição de ensino de maneira mais organizada e eficiente.
 </p>
+
 ## Referências Bibliográficas
  
+> BRASIL. Lei nº 11.788, de 25 de setembro de 2008. Dispõe sobre o estágio de estudantes.
+
 > BARBOSA, S. D. J; DA SILVA, B. S. Interação humano-computador. Elsevier, 2010.
  
  
 ## Autor(es)
 | Data | Versão | Descrição | Autor(es) |
 | -- | -- | -- | -- |
-| DD/MM/YYYY | 1.0 | Criação do documento | XXX XXXX, XXXX XXXX, YYY YYYY e ZZZ XXXX |
+| 31/03/2026 | 1.0 | Criação do documento | Jorge, Gabriel, Rafael, Davi e Biel |
