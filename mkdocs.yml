@@ -8,6 +8,7 @@ copyright: Copyright ©️ 2026, PBE_26.1_8001_II
 nav: 
   - Home: index.md
   - Disciplina:
+      - Index: Disciplina/index.md
       - Aulas: Disciplina/aulas.md
       - Avaliações: Disciplina/avaliacoes.md
       - Ambiente: Disciplina/ambiente.md
