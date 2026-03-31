@@ -22,48 +22,45 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
 ### 1. Qual o objetivo principal da aplicação?
  
 <p align = "justify">
-<b>XXXX</b> - Deve ser uma plataforma onde qualquer pessoa possa...
-</p>
- 
-<b>ZZZ</b> - A plataforma deve fornece...
- 
-<b>YYYY</b> - O objetivo da aplicação é....
- 
-<b>WWWW</b> - O principal objetivo da aplicação é a...
- 
-<b>KKKK</b> - A plataforma deve gerenciar...
-</p>
+ <b>Jorge</b> - Deve ser uma plataforma onde alunos consigam encontrar vagas de estágio compatíveis com seu curso e acompanhar todo o processo de candidatura. </p>
+
+<b>Davi</b> - A plataforma deve fornecer um sistema centralizado para gerenciar estágios, incluindo cadastro de alunos, empresas e vagas.
+
+<b>Rafael</b> - O objetivo da aplicação é organizar o processo de estágio dentro da instituição, reduzindo a burocracia e facilitando o envio e controle de documentos.
+
+<b>Gabriel</b> - O principal objetivo da aplicação é permitir que a faculdade acompanhe os estágios dos alunos de forma mais eficiente.
+
+<b>Gabriel Aguiar</b> - A plataforma deve gerenciar todo o ciclo do estágio, desde a candidatura até o encerramento, incluindo termos e documentação.
  
 ---
  
 ### 2. Como será o processo para cadastrar um novo cliente?
  
-<p align = "justify">
-<b>XXXX</b> - O moderador deverá fazer login e...
- 
-<b>YYYY</b> - O cliente...
- 
-<b>WWWW</b> - Com o usuário logado, ele deverá...
+<p align = "justify"> 
+<b>Jorge</b> - O usuário deverá acessar o sistema e realizar um cadastro informando dados básicos como nome, e-mail, curso (no caso de aluno) ou informações da empresa. </p>
 
-<b>ZZZZ</b> - O cliente...
- 
-<b>KKK</b> - O cliente...
+<b>Davi</b> - O aluno poderá se cadastrar informando seus dados acadêmicos, como curso e período, para facilitar a recomendação de vagas.
+
+<b>Rafael</b> - Com o usuário cadastrado, ele poderá fazer login e acessar o sistema para visualizar vagas ou gerenciar informações.
+
+<b>Gabriel</b> - A empresa deverá preencher informações como nome, área de atuação e dados de contato para poder cadastrar vagas.
+
+<b>Gabriel Aguiar</b> - Após o cadastro, o sistema pode validar os dados e liberar o acesso ao sistema.
  
 ---
  
 ### 3. Como será a forma de adicionar produtos?
  
-<p align = "justify">
-<b>XXXX</b> - O cliente ao cadastrar...
-</p>
- 
-<p align = "justify">
-<b>YYYYY</b> - O produto tem...
-</p>
- 
-<b>ZZZZ</b> - O produto....
- 
-<b>XXXX</b> - O produto....
+<p align = "justify"> 
+<b>Jorge</b> - A empresa, após fazer login, poderá cadastrar uma vaga informando título, descrição, requisitos e carga horária. </p> <p align = "justify"> 
+
+<b>Gabriel</b> - A vaga deve conter informações como área de atuação, habilidades exigidas e benefícios oferecidos. </p>
+
+<b>Davi</b> - O sistema deve permitir que a vaga seja associada a cursos específicos, facilitando a busca dos alunos.
+
+<b>Gabriel</b> - Após o cadastro, a vaga ficará disponível para os alunos se candidatarem.
+
+<b>Gabriel Aguiar</b> - O sistema também pode permitir a edição ou remoção da vaga pela empresa.
 
  
 ---
