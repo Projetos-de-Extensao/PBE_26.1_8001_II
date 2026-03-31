@@ -54,7 +54,7 @@ A equipe se reuniu para debater ideias gerais sobre o projeto via..., começou .
 <p align = "justify"> 
 <b>Jorge</b> - A empresa, após fazer login, poderá cadastrar uma vaga informando título, descrição, requisitos e carga horária. </p> <p align = "justify"> 
 
-<b>Gabriel</b> - A vaga deve conter informações como área de atuação, habilidades exigidas e benefícios oferecidos. </p>
+<b>Rafael</b> - A vaga deve conter informações como área de atuação, habilidades exigidas e benefícios oferecidos. </p>
 
 <b>Davi</b> - O sistema deve permitir que a vaga seja associada a cursos específicos, facilitando a busca dos alunos.
 
