@@ -1,8 +1,9 @@
 ---
-repo_url: https://github.com/jonh-carvalho/PBE_25.2_8003
-site_author: Jonh Carvalho
-site_name: PBE_25.2_8003
-copyright: Copyright ©️ 2025, Jonh Carvalho
+site_url: https://projetos-de-extensao.github.io/PBE_26.1_8001_II/
+repo_url: https://github.com/Projetos-de-Extensao/PBE_26.1_8001_II
+site_author: PBE 26.1 8001 II
+site_name: PBE_26.1_8001_II
+copyright: Copyright ©️ 2026, PBE_26.1_8001_II
 
 nav: 
   - Home: index.md
@@ -18,7 +19,7 @@ nav:
       - Pesquisa: Iniciacao/pesquisa.md
       - 5w2h: Iniciacao/5w2h.md
       - Design Thinking: Iniciacao/design_thinking.md
-      - Brainstorming: Iniciacao/brainstorm.md
+      - Brainstorming: Iniciacao/Brainstorm.md
       - Mapa Mental: Iniciacao/mapa_mental.md
       - Prototipagem Baixa Fidelidade: Iniciacao/prototipo_baixa_fidelidade.md
   - Elaboração:
@@ -36,7 +37,7 @@ nav:
   - Transição:
       - Index: Transicao/index.md
 
-  - Bibliografia: Disciplina/bibliografia.md
+  - Bibliografia: Disciplina/Bibliografia.md
 
 extra_css:
   - css/extra.css
