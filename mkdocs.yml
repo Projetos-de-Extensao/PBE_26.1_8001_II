@@ -1,9 +1,9 @@
 ---
 site_url: https://projetos-de-extensao.github.io/PBE_26.1_8001_II/
 repo_url: https://github.com/Projetos-de-Extensao/PBE_26.1_8001_II
-site_author: PBE 26.1 8001 II
-site_name: PBE_26.1_8001_II
-copyright: Copyright ©️ 2026, PBE_26.1_8001_II
+site_author: Sistema de Gestão de Estágio
+site_name: Sistema de Gestão de Estágio
+copyright: Copyright ©️ 2026, Sistema de Gestão de Estágio
 
 nav: 
   - Home: index.md
