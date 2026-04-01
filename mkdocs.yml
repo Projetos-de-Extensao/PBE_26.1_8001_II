@@ -133,6 +133,7 @@ theme:
     - navigation.instant.progress
     - navigation.path
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
     - search.highlight
