@@ -1,15 +1,22 @@
-# Sistema de Gestão de Estágios
+# PBE_26.1_8001_II
 
-Bem-vindo ao site do projeto **Sistema de Gestão de Estágios**! Este é um sistema desenvolvido como projeto de extensão para gerenciar e acompanhar o processo de estágios.
+<div class="grid cards" markdown>
 
-## Navegação
+-   :material-github:{ .lg .right } __PBE_25.21_8003_I__
 
-Use as abas acima para explorar as diferentes seções do projeto:
+    ---
 
-- **Disciplina**: Referências das aulas, ambiente, ferramentas e bibliográfia
-- **Iniciação**: Pesquisa, design thinking, brainstorming e prototipagem
-- **Elaboração**: Requisitos, casos de uso e diagramas do sistema
-- **Construção**: Guias de desenvolvimento e ferramentas
-- **Transição**: Informações de transição do projeto
+    Lorem Ipsum     Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
 
-Explore cada seção para entender melhor o processo de desenvolvimento deste sistema!
+    [:octicons-arrow-right-24: Repositório](https://github.com/Projetos-de-Extensao/PBE_25.2_8003_I)
+
+-   :material-github:{ .lg .middle } __PBE_25.2_8003_II__
+
+    ---
+
+    Lorem Ipsum Lorem Ipsum Lorem Ipsum
+
+    [:octicons-arrow-right-24: Repositório](https://github.com/Projetos-de-Extensao/PBE_25.2_8003_II)
+
+
+</div>
