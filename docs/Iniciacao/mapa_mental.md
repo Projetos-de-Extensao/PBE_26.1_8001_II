@@ -6,7 +6,7 @@ title: Mapas Mentais
 ## Introdução
 
 <p align="justify">
-O mapa mental é uma técnica utilizada para organizar ideias de forma visual, facilitando a compreensão e a relação entre os principais elementos de um tema. Ele permite representar de forma estruturada conceitos importantes, auxiliando no entendimento geral do projeto.
+O mapa mental é uma ferramenta visual utilizada para organizar e estruturar ideias de forma clara e objetiva. No contexto do Sistema de Gestão de Estágios, ele permite representar os principais elementos do sistema, facilitando a compreensão de seus objetivos, funcionamento e componentes.
 </p>
 
 ---
@@ -14,7 +14,7 @@ O mapa mental é uma técnica utilizada para organizar ideias de forma visual, f
 ## Metodologia
 
 <p align="justify">
-Com base no brainstorm realizado pela equipe para o desenvolvimento do Sistema de Gestão de Estágios, foi elaborado um mapa mental com o objetivo de sintetizar e organizar os principais pontos discutidos. Foram considerados aspectos como objetivos do sistema, sua definição, forma de implementação e informações gerenciadas pela aplicação.
+A construção do mapa mental foi baseada no brainstorm realizado pela equipe, no qual foram discutidos os principais aspectos do Sistema de Gestão de Estágios. A partir dessas discussões, foram selecionados e organizados pontos essenciais, como finalidade do sistema, definição, forma de implementação e informações gerenciadas, estruturando-os de forma hierárquica.
 </p>
 
 ---
@@ -32,7 +32,7 @@ Com base no brainstorm realizado pela equipe para o desenvolvimento do Sistema d
 ## Conclusão
 
 <p align="justify">
-O mapa mental contribui para uma visão geral do Sistema de Gestão de Estágios, permitindo identificar de forma clara seus objetivos, funcionamento e principais componentes. Dessa forma, ele serve como um recurso visual que facilita a compreensão do problema e da solução proposta, auxiliando no desenvolvimento do sistema.
+O mapa mental desenvolvido permite visualizar de forma simples e organizada os principais aspectos do Sistema de Gestão de Estágios. Ele auxilia na compreensão do problema abordado, da solução proposta e das funcionalidades do sistema, servindo como apoio para o desenvolvimento do projeto.
 </p>
 
 ---
