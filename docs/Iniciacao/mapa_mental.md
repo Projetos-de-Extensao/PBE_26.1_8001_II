@@ -25,7 +25,7 @@ Com base no brainstorm realizado pela equipe para o desenvolvimento do Sistema d
 
 #### Mapa mental
 
-![Mapa mental](../assets/Mapas_Mentais/image.png)
+![Mapa mental](../assets/Mapas_Mentais/mapa_estagios.png)
 
 ---
 
