@@ -1,29 +1,15 @@
----
-hide:
-  - navigation
-  - toc
----  
-
-# PBE_25.2_8003
-
-<div class="grid cards" markdown>
-
--   :material-github:{ .lg .right } __PBE_25.21_8003_I__
-
-    ---
-
-    Lorem Ipsum     Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
-
-    [:octicons-arrow-right-24: Repositório](https://github.com/Projetos-de-Extensao/PBE_25.2_8003_I)
-
--   :material-github:{ .lg .middle } __PBE_25.2_8003_II__
-
-    ---
-
-    Lorem Ipsum Lorem Ipsum Lorem Ipsum
-
-    [:octicons-arrow-right-24: Repositório](https://github.com/Projetos-de-Extensao/PBE_25.2_8003_II)
-
-
-</div>
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestão de Estágios</title>
+</head>
+<body>
+  <h1>Sistema de Gestão de Estágios</h1>
+  <ul>
+    <li><a href="brainstorm.md">Brainstorm</a></li>
+    <li><a href="pesquisa.md">Pesquisa</a></li>
+  </ul>
+</body>
+</html>
