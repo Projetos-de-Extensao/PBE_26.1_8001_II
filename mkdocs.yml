@@ -1,24 +1,27 @@
 ---
-repo_url: https://github.com/jonh-carvalho/PBE_25.2_8003
-site_author: Jonh Carvalho
-site_name: PBE_25.2_8003
-copyright: Copyright ©️ 2025, Jonh Carvalho
+site_url: https://projetos-de-extensao.github.io/PBE_26.1_8001_II/
+repo_url: https://github.com/Projetos-de-Extensao/PBE_26.1_8001_II
+site_author: Sistema de Gestão de Estágio
+site_name: Sistema de Gestão de Estágio
+copyright: Copyright ©️ 2026, Sistema de Gestão de Estágio
 
 nav: 
   - Home: index.md
   - Disciplina:
+      - Index: Disciplina/index.md
       - Aulas: Disciplina/aulas.md
-      - Ambiente: Disciplina/ambiente.md
-      - Github: Disciplina/github.md
-      - Mkdocs: Disciplina/mkdocs.md
-      - CodeSpace: Disciplina/codespace.md
       - Avaliações: Disciplina/avaliacoes.md
+      - Ambiente: Disciplina/ambiente.md
+      - GitHub: Disciplina/github.md
+      - CodeSpace: Disciplina/codespace.md
+      - MkDocs: Disciplina/mkdocs.md
+      - Bibliográfia: Disciplina/Bibliografia.md
   - Iniciação: 
       - Index: Iniciacao/index.md
       - Pesquisa: Iniciacao/pesquisa.md
       - 5w2h: Iniciacao/5w2h.md
       - Design Thinking: Iniciacao/design_thinking.md
-      - Brainstorming: Iniciacao/brainstorm.md
+      - Brainstorming: Iniciacao/Brainstorm.md
       - Mapa Mental: Iniciacao/mapa_mental.md
       - Prototipagem Baixa Fidelidade: Iniciacao/prototipo_baixa_fidelidade.md
   - Elaboração:
@@ -35,8 +38,6 @@ nav:
       - CodeSpace: Construcao/codespace.md
   - Transição:
       - Index: Transicao/index.md
-
-  - Bibliografia: Disciplina/bibliografia.md
 
 extra_css:
   - css/extra.css
@@ -99,7 +100,7 @@ plugins:
 
 theme:
   name: material
-  logo: assets/ibmec_logo.png
+  logo: assets/Ibmec_logo.png
   palette:
     
     - media: "(prefers-color-scheme)"
@@ -127,11 +128,11 @@ theme:
   
   features:
     - content.code.copy
-    - navigation.indexes
     - navigation.instant
     - navigation.instant.progress
     - navigation.path
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
     - navigation.tracking
     - search.highlight

@@ -2,47 +2,51 @@
 id: mapa_mental
 title: Mapas Mentais
 ---
- 
+
 ## Introdução
- 
-<p align = "justify">
-Mapa mental consiste em criar resumos cheios de símbolos, cores, setas e frases de efeito com o objetivo de organizar o conteúdo e facilitar associações entre as informações destacadas. Esse material é muito indicado para pessoas que têm facilidade de aprender de forma visual.
+
+<p align="justify">
+O mapa mental é uma ferramenta visual utilizada para organizar e estruturar ideias de forma clara e objetiva. No contexto do Sistema de Gestão de Estágios, ele permite representar os principais elementos do sistema, facilitando a compreensão de seus objetivos, funcionamento e componentes.
 </p>
- 
+
+---
+
 ## Metodologia
- 
-<p align = "justify">
-Foi levantado um ponto importante sobre o app e, assim, foi produzido o mapa mental. O documento foi produzido utilizando a ferramenta...
+
+<p align="justify">
+A construção do mapa mental foi baseada no brainstorm realizado pela equipe, no qual foram discutidos os principais aspectos do Sistema de Gestão de Estágios. A partir dessas discussões, foram selecionados e organizados pontos essenciais, como finalidade do sistema, definição, forma de implementação e informações gerenciadas, estruturando-os de forma hierárquica.
 </p>
- 
-## Mapa mental - Geral.
- 
-## Versão 1.0
- 
-### Mapa mental 1
- 
-[![Mapa mental Entrevista](../assets/Mapas_Mentais/image.png)](../assets/Mapas_Mentais/image.png)
- 
- 
-### Mapa mental 2
- 
-[![Mapa mental Brainstorm](../assets/Mapas_Mentais/image.png)](../assets/Mapas_Mentais/image.png)
- 
+
+---
+
+## Mapa mental - Geral
+
+### Versão 1.0
+
+#### Mapa mental
+
+![Mapa mental](../assets/Mapas_Mentais/mapa_estagios.png)
+
+---
+
 ## Conclusão
- 
-<p align = "justify">
-O mapa mental é uma ficha de estudos que ajuda a dar uma visão geral do tema, e ajuda a fixar os pontos mais importantes sobre o app.
+
+<p align="justify">
+O mapa mental desenvolvido permite visualizar de forma simples e organizada os principais aspectos do Sistema de Gestão de Estágios. Ele auxilia na compreensão do problema abordado, da solução proposta e das funcionalidades do sistema, servindo como apoio para o desenvolvimento do projeto.
 </p>
- 
+
+---
+
 ## Referências
-> Mapa MentalXXX,  Disponível em: https://www.....
- 
-> Ferramentas para Mapas Mentais. Disponível em: https://www....
- 
-> Plataforma para usuários colaborar no desenho... Disponível em: https://...
- 
+
+> BRASIL. Lei nº 11.788, de 25 de setembro de 2008. Dispõe sobre o estágio de estudantes.
+
+> BARBOSA, S. D. J.; DA SILVA, B. S. Interação humano-computador. Elsevier, 2010.
+
+---
+
 ## Versionamento
+
 | Data | Versão | Descrição | Autor(es) |
-| -- | -- | -- | -- |
-| dd/mm/yy | 1.0 | Criação do documento | xxx xxxx |
-| dd/mm/yy | 2.0 | Adicionado Mapa mental 2 | xxxx xxxx |
+|------|--------|-----------|----------|
+| 31/03/2026 | 1.0 | Criação do mapa mental | Jorge, Gabriel, Rafael, Davi e Biel |
