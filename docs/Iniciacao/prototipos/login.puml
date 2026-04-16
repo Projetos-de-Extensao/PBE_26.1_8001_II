@@ -1,0 +1,11 @@
+@startsalt
+{
+{^Login
+Email: | "            "
+Senha: | "            "
+[ Entrar ]
+--
+[ Sou aluno ] [ Sou empresa ]
+}
+}
+@endsalt
