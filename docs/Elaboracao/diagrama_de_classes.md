@@ -1,87 +1,114 @@
 ---
-id: diagrama_de_casos de uso
-title: Diagrama de Casos de Uso
+id: diagrama_de_classes
+title: Diagrama de Classes
 ---
 
-## Casos de Uso
+## Introdução
 
-### Descrição:
+<p align = "justify">
+O Diagrama de Classes é um dos principais artefatos da UML (Unified Modeling Language) e tem como objetivo representar a estrutura estática do sistema, descrevendo as classes que o compõem, seus atributos, métodos e os relacionamentos entre elas. No contexto deste projeto, o diagrama foi utilizado para modelar as entidades do Sistema de Gestão de Estágios Acadêmicos do IBMEC, servindo como referência para o desenvolvimento e para a compreensão da arquitetura do sistema.
+</p>
 
-- Contas
-	- Criação
-	- Entrada
-	- Alteração
-	- Recuperar Senha
-	- Exclusão Lógica
-	- Visualização
+## Metodologia
 
-- Perfis
-	- Edição
-	- Pesquisar
-	- Visualização
-	- Seguir/Deixar de Seguir
+<p align = "justify">
+A equipe analisou os requisitos levantados nas etapas anteriores — 5W2H, Brainstorming e Casos de Uso — para identificar as principais entidades do sistema e seus relacionamentos. O diagrama foi elaborado utilizando a ferramenta draw.io e segue a notação padrão UML. As classes foram organizadas de acordo com os três perfis de usuário do sistema: Aluno, Professor Orientador e Coordenador.
+</p>
 
-- Postagens (Público) 	 	
-	- Criação
-	- Exclusão
-	- Interação
-	- Visualização
+## Diagrama de Classes
 
-- Mensagens (Privado)
-	- Criação
-	- Exclusão
-	- Visualização
+### Versão 1.0
 
-- Galerias
-	- Albuns
-- Blogs
-- Grupos
+<p align = "justify">
+A primeira versão do diagrama contempla as classes centrais do sistema: Usuario, Aluno, Professor, Coordenador, Estagio, Documento e Relatorio. Os relacionamentos modelam o ciclo completo de um estágio, desde o cadastro pelo aluno até a validação pelo professor e geração de relatórios pela coordenação.
+</p>
 
-### Criação de uma conta no sistema
+[![Diagrama de Classes](assets/diagrama_classes/diagrama_v1.png)](assets/diagrama_classes/diagrama_v1.png)
 
-* Atores:
+#### Descrição das Classes
 
-	- Usuário
-	- Sistema
+**Usuario**
+- id: int
+- nome: String
+- email: String
+- senha: String
+- perfil: Enum (ALUNO, PROFESSOR, COORDENADOR)
+- + login(): void
+- + logout(): void
+- + recuperarSenha(): void
 
-- Pré-Condições:
-	- Nenhuma
+**Aluno** (herda de Usuario)
+- matricula: String
+- curso: String
+- periodo: int
+- + cadastrarEstagio(): Estagio
+- + enviarDocumento(): Documento
+- + visualizarStatus(): String
 
-* Fluxo Básico:
-    1. Usuário fornece e-mail, senha e confirmações
-    2. Dados do Usuário são validados pelo Sistema
-    3. Dados do Usuário são encriptados pelo Sistema
-    4. Dados do Usuário são persistidos pelo Sistema
-    5. Sistema gera um link com prazo de expiração
-    6. Sistema envia e-mail de verificação, com o link, para o Usuário
-    7. Usuário confirma o e-mail antes do link expirar
-    8. Sistema confirma que o Cadastro do Usuário foi realizado com sucesso
-    9. Sistema redireciona o Usuário para a página de Entrada
+**Professor** (herda de Usuario)
+- registro: String
+- departamento: String
+- + validarEstagio(): void
+- + solicitarCorrecao(): void
+- + visualizarAlunos(): List\<Aluno\>
 
-- Fluxos Alternativos:
-	- 2a. E-mail do Usuário é inválido
-		2a1. Sistema exibe mensagem de erro
-	- 2b. Senha do Usuário não respeita regras de segurança
-		- 2b1. Sistema exibe mensagem de erro
-	- 3a. Usuário tenta confirmar o e-mail depois de o link expirar
-		- 3a1. Sistema sugere que o Usuário realize um novo Cadastro
+**Coordenador** (herda de Usuario)
+- + gerarRelatorio(): Relatorio
+- + visualizarTodosEstagios(): List\<Estagio\>
+- + filtrarPorCurso(): List\<Estagio\>
 
-### Entrada do usuário no sistema
+**Estagio**
+- id: int
+- empresa: String
+- area: String
+- cargaHoraria: int
+- dataInicio: Date
+- dataFim: Date
+- status: Enum (PENDENTE, EM_ANDAMENTO, CONCLUIDO, REPROVADO)
+- aluno: Aluno
+- professor: Professor
+- + atualizarStatus(): void
 
-- Atores:
-	- Usuário
-	- Sistema
+**Documento**
+- id: int
+- tipo: Enum (TERMO_COMPROMISSO, APOLICE, RELATORIO_PARCIAL, RELATORIO_FINAL)
+- arquivo: String
+- dataEnvio: Date
+- status: Enum (PENDENTE, APROVADO, REJEITADO)
+- estagio: Estagio
+- + enviar(): void
+- + visualizar(): void
 
-- Pré-Condições:
-	Usuário deve estar cadastrado
+**Relatorio**
+- id: int
+- dataGeracao: Date
+- totalEstagios: int
+- totalConcluidos: int
+- totalPendentes: int
+- curso: String
+- + gerar(): void
+- + exportar(): void
 
-- Fluxo Básico:
-    - 1. Usuário fornece e-mail e senha
-	- 2. Sistema autentica o Usuário
-	- 3. Sistema redireciona o Usuário para a página inicial
+## Conclusão
 
-- Fluxos Alternativos:
-	- 2a. Dados do Usuário Inválidos
-		- 2a1. Sistema exibe mensagem de erro
-	- 3a. Primeio acesso do Usuário
-		- 3a1. Sistema redireciona o Usuário para a página de edição de perfil
+<p align = "justify">
+A elaboração do Diagrama de Classes permitiu à equipe ter uma visão clara e estruturada das entidades do sistema e de como elas se relacionam entre si. O artefato foi essencial para guiar as decisões de desenvolvimento, facilitando a definição das tabelas do banco de dados e a implementação das funcionalidades. A modelagem orientada a objetos evidenciou a hierarquia de usuários e o fluxo de responsabilidades entre aluno, professor e coordenador no ciclo de gestão dos estágios.
+</p>
+
+## Referências
+
+> BOOCH, G.; RUMBAUGH, J.; JACOBSON, I. UML: Guia do Usuário. 2. ed. Rio de Janeiro: Elsevier, 2006.
+
+> LARMAN, C. Utilizando UML e Padrões. 3. ed. Porto Alegre: Bookman, 2007.
+
+> Ferramenta draw.io. Disponível em: https://www.drawio.com
+
+> PMI. Um guia do conhecimento em gerenciamento de projetos. Guia PMBOK® 5a. ed. EUA: Project Management Institute, 2013.
+
+## Autor(es)
+
+| Data     | Versão | Descrição                              | Autor(es)       |
+| -------- | ------- | ---------------------------------------- | --------------- |
+| 16/04/25 | 1.0     | Criação do documento                   | [Davi, Rafael, Jorge Alves, Gabriel, Gabriel] |
+| 16/04/25 | 1.1     | Adicionado diagrama e descrição das classes | [Davi, Rafael, Jorge Alves, Gabriel, Gabriel] |
+| 16/04/25 | 1.2     | Adicionadas conclusão e referências    | [Davi, Rafael, Jorge Alves, Gabriel, Gabriel] |
