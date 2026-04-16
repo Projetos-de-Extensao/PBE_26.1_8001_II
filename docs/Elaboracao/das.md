@@ -1,150 +1,206 @@
 ---
-id: documento_de_arquitetura
-title: Documento de Arquitetura
+id: das
+title: Documento de Arquitetura de Software
 ---
+
 # Documento de Arquitetura de Software (DAS)
 
-# "Nome do Projeto"
+# Sistema de Gestão de Estágios
 
-# Introdução
+**Autores:**  
+- Rafael Barbosa  
+- Jorge do Cruzeiro  
+- Davi Ito  
+- Gabriel Lima  
+- Gabriel Aguiar  
 
-## Proposta
+**Disciplina:** Projeto Back-End  
+**Semestre:** 2026.1  
+**Instituição:** Ibmec  
 
-<p align = "justify">
-Este documento apresenta uma visão geral da arquitetura do sistema, utilizando diferentes visões arquiteturais para destacar diferentes aspectos do sistema. É utilizado para capturar as decisões arquiteturais significativas que fizeram parte do sistema.
-</p>
+---
 
-## Escopo
+## Introdução
 
-<p align = "justify">
-A aplicação "XXXX" tem o objetivo fornecer...
-</p>
+### Proposta
 
-## Definições, Acrônimos e Abreviações
+Este documento apresenta uma visão geral da arquitetura do sistema de gestão de estágios, utilizando diferentes visões arquiteturais para destacar os principais aspectos da aplicação. Ele tem como objetivo registrar as decisões arquiteturais adotadas durante o desenvolvimento do sistema.
 
-- MVC -
-- MVT -
-- SIGLA PARA O APP - Nome do Aplicativo
+---
+
+### Escopo
+
+A aplicação "Sistema de Gestão de Estágios" tem como objetivo centralizar e organizar o processo de estágios da instituição, permitindo o cadastro de alunos, empresas e vagas, além do acompanhamento das candidaturas.
+
+---
+
+### Definições, Acrônimos e Abreviações
+
+- MVC – Model View Controller  
+- API – Application Programming Interface  
+- SGE – Sistema de Gestão de Estágios  
+
+---
 
 ## Visão Geral
 
-<p align = "justify">
-O Documento de Arquitetura de Software (DAS) trata-se de uma visão geral de toda a arquitetura do sistema, observando diferentes aspectos do mesmo. Neste documento serão abordadas as seguintes visões da aplicação TCM:
-</p>
+O Documento de Arquitetura de Software (DAS) apresenta uma visão geral da arquitetura do sistema, abordando diferentes aspectos da aplicação.
 
-- Caso de Uso;
-- Lógica;
-- Implantação;
-- Implementação;
-- Dados;
+Neste documento são tratadas as seguintes visões:
 
-# Representação Arquitetural
+- Caso de Uso  
+- Lógica  
+- Implantação  
+- Implementação  
+- Dados  
 
-## Cliente-Servidor
+---
 
-<p align = "justify">
-Cliente-Servidor é um modelo de arquitetura...
-</p>
+## Representação Arquitetural
 
-Cliente (Frontend):
+### Cliente-Servidor
 
-- View: Consiste.....
+A aplicação segue o modelo cliente-servidor, onde o frontend é responsável pela interação com o usuário e o backend pelo processamento das regras de negócio e acesso aos dados.
 
-Servidor (Backend):
+#### Cliente (Frontend)
 
-- Controller: faz a conexão entre as camadas...
-- Service: Responsável pela lógica...
-- Model: Responsável pela persistência...
+- **View**: responsável pela interface e exibição das informações ao usuário  
 
-# Objetivos de Arquitetura e Restrições
+#### Servidor (Backend)
 
-## Objetivos
+- **Controller**: responsável por receber requisições e encaminhar para as camadas adequadas  
+- **Service**: responsável pela lógica de negócio do sistema  
+- **Model**: responsável pela manipulação e organização dos dados  
 
-<p align = "justify">
-Segurança:
-   -
-Persistência:
-   - 
-Privacidade:
-   - Middlewares: Foi usado middlewares...
-Desempenho:
-   Requisições...
-Reusabilidade:
-   Componentes no Frontend...
-</p>
+---
 
-## Restrições
+## Objetivos de Arquitetura e Restrições
 
-<p align = "justify">
-Tamanho da tela:...
+### Objetivos
 
-Portabilidade:...
+- **Segurança**: garantir autenticação e proteção dos dados dos usuários  
+- **Privacidade**: assegurar o tratamento adequado das informações  
+- **Desempenho**: responder às requisições de forma eficiente  
+- **Reusabilidade**: permitir reaproveitamento de componentes  
+- **Escalabilidade**: suportar múltiplos usuários simultaneamente  
 
-| IE | Edge  | Firefox | Chrome | Safari | Googlebot |
-| -- | ----- | ------- | ------ | ------ | --------- |
-| 11 | >= 14 | >= 52   | >= 49  | >= 10  | Sim       |
+---
 
-Serviços: Os serviços oferecidos....
+### Restrições
 
-Acesso a internet: A aplicação está limitada apenas a conexão com internet
+- **Acesso à internet**: o sistema depende de conexão ativa  
+- **Plataforma**: acesso via navegador web  
+- **Compatibilidade**: funcionamento em navegadores modernos (Chrome, Edge e Firefox)  
+- **Banco de Dados**: será definido nas próximas etapas do projeto  
 
-</p>
+---
 
 ## Ferramentas Utilizadas
 
-- XXX: Ambiente de execução...
-- XXXX: Linguagem de programação...
-  Typescript: XXXX
-- XXXX: XXXX
-- XXX: XXXX
-- XXXX: XXXX
-- XXXX: XXXX
-- XXXX: XXXX
-- XXXXX: XXXX.
+- **Python**: linguagem utilizada no backend  
+- **HTML, CSS e JavaScript**: construção da interface  
+- **MkDocs**: documentação do projeto  
+- **Git e GitHub**: controle de versão  
+- **PlantUML**: criação de diagramas  
 
-# Visão de Caso de Uso
+---
 
-<p align = "justify">
-O primeiro caso de uso descreve a ação...
-</p>
+## Visão de Caso de Uso
 
-![Caso de uso 1](../assets/Casos_de_Uso/Exemplocaso_de_uso_1.png)
+Os principais casos de uso do sistema envolvem a interação entre alunos, empresas e a instituição.
 
-![Caso de uso 2](../assets/Casos_de_Uso/Exemplocaso_de_uso_1.png)
+- Cadastro de usuário  
+- Cadastro de vagas  
+- Visualização de vagas  
+- Candidatura a vagas  
+- Seleção de candidatos  
+- Acompanhamento de candidatura  
 
-# Visão Lógica
+---
 
-# Visão de Implantação
+## Visão Lógica
 
-# Visão de Implementação
+O sistema é estruturado em camadas, separando responsabilidades entre interface, lógica de negócio e manipulação de dados.
 
-## Visão Geral
+Essa divisão facilita a manutenção e evolução do sistema.
 
-![Diagrama de Componentes](../assets/Casos_de_Uso/Exemplocaso_de_uso_1.png)
+---
 
-# Visão de Dados
+## Visão de Implantação
 
-## Modelo Entidade Relacionamento (MER)
+A aplicação será disponibilizada em ambiente web, podendo ser acessada por meio de navegadores.
 
-#### Entidades e Relacionamentos:
+O sistema será executado em servidor, com acesso remoto pelos usuários.
 
-## Diagrama Entidade Relacionamento (DER)
+---
 
-# Tamanho e Desempenho
+## Visão de Implementação
 
-# Qualidade
+### Visão Geral
 
-</p>
+O sistema será implementado utilizando arquitetura baseada em camadas, com separação entre:
 
-# Referências Bibliográficas
+- Controllers  
+- Services  
+- Models  
 
-# Histórico de Versão
+Essa organização permite maior clareza, organização e manutenção do código.
 
-| Data       | Versão | Descrição                                                            | Autor(es)                                   |
-| ---------- | ------- | ---------------------------------------------------------------------- | ------------------------------------------- |
-| 08/11/2020 | 1.0     | Criada estrutura básica do documento                                  | xxx xxx, xxx xx, xxx xx, xxx xxx e xxx xxxx |
-| 15/11/2020 | 1.1     | Representação arquitetural e objetivos e restrições arquiteturais. | Autores                                     |
-| 19/11/2020 | 1.2     | Adição dos diagramas, visões, tamanho e desempenho e qualidade      | Autores                                     |
-| 20/11/2020 | 1.3     | Adição da descrição de MER e DER                                   | Autores                                     |
-| 20/11/2020 | 1.4     | Adição do tópico de qualidade                                       | Autores                                     |
-| 20/11/2020 | 1.5     | Revisão                                                               | Autores                                     |
+---
+
+## Visão de Dados
+
+### Modelo Entidade Relacionamento (MER)
+
+As principais entidades do sistema são:
+
+- Aluno  
+- Empresa  
+- Vaga  
+- Candidatura  
+
+---
+
+### Entidades e Relacionamentos
+
+- Um aluno pode se candidatar a várias vagas  
+- Uma vaga pode possuir vários candidatos  
+- Uma empresa pode publicar várias vagas  
+
+---
+
+### Diagrama Entidade Relacionamento (DER)
+
+O DER representa graficamente as entidades e seus relacionamentos, servindo como base para a construção do banco de dados.
+
+---
+
+## Tamanho e Desempenho
+
+O sistema foi projetado para suportar múltiplos usuários simultaneamente, mantendo um tempo de resposta adequado para as operações principais.
+
+---
+
+## Qualidade
+
+O sistema busca atender critérios de qualidade como:
+
+- Usabilidade  
+- Segurança  
+- Desempenho  
+- Confiabilidade  
+
+---
+
+## Referências Bibliográficas
+
+- Engenharia de Software Moderna  
+- Documentações oficiais das tecnologias utilizadas  
+
+---
+
+## Histórico de Versão
+
+| Data       | Versão | Descrição             | Autor(es)                                                                 |
+|------------|--------|-----------------------|---------------------------------------------------------------------------|
+| 16/04/2026 | 1.0    | Criação do documento  | Rafael Barbosa, Jorge do Cruzeiro, Davi Ito, Gabriel Lima e Gabriel Aguiar |
