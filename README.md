@@ -1,24 +1,43 @@
-# Projeto Back-End 
+# Projeto Back-End
 
-**Site do Projeto**
+## Site do Projeto
 
 https://Projetos-de-Extensao.github.io/PBE_26.1_8001_II/
 
-**Código da Disciplina**: IBM8936<br>
+## Código da Disciplina
 
-**Integrantes do Grupo**
+IBM8936
 
-Rafael Barbosa,
-Gabriel Lima,
-Jorge Alves,
-Davi Ito,
-Gabriel Aguiar
+## Integrantes do Grupo
 
-## Sobre 
-Descreva o seu projeto em linhas gerais. 
+Rafael Barbosa, Gabriel Lima, Jorge Alves, Davi Ito, Gabriel Aguiar
 
-## Instalação 
-**Linguagens**: Python, Django<br>
-**Tecnologias**: Github, Visual Studio Code<br>
- os pré-requisitos para rodar o seu projeto são UX, Engenharia de Dados, POO.
+---
 
+## Sobre
+
+Este projeto consiste no desenvolvimento de um sistema de gestão de estágios, com o objetivo de centralizar e organizar todo o processo de candidatura e acompanhamento de vagas.
+
+A aplicação permite que alunos visualizem oportunidades de estágio, realizem candidaturas e acompanhem o andamento do processo seletivo. As empresas, por sua vez, podem cadastrar vagas, analisar candidatos e realizar a seleção.
+
+Além disso, a instituição atua como responsável pela validação e acompanhamento dos estágios, garantindo que todo o processo esteja de acordo com as normas acadêmicas.
+
+O sistema busca melhorar a comunicação entre os envolvidos, reduzir a desorganização do processo e concentrar todas as informações em uma única plataforma.
+
+---
+
+## Instalação
+
+### Linguagens
+
+- Python
+
+### Tecnologias
+
+- GitHub  
+- Visual Studio Code  
+- MkDocs  
+
+### Observações
+
+O projeto encontra-se em fase de desenvolvimento, com foco inicial na modelagem e documentação do sistema.
