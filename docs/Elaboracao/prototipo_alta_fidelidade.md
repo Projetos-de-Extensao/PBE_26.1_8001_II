@@ -85,3 +85,87 @@ title: Diagrama de Casos de Uso
 		- 2a1. Sistema exibe mensagem de erro
 	- 3a. Primeio acesso do Usuário
 		- 3a1. Sistema redireciona o Usuário para a página de edição de perfil
+documentos
+@startsalt
+{
+{+Dashboard
+
+{<
++ Dashboard
++ Vagas
++ Minhas candidaturas
++ Meu estágio
++ Documentos
+}
+|
+
+Bem-vindo, Usuário!
+
+-------------------------
+
+Vagas disponíveis: X  
+Candidaturas: X  
+Status do estágio: Ativo  
+
+}
+}
+@endsalt
+login
+@startsalt
+{
+{^Login
+Email: | "            "
+Senha: | "            "
+[ Entrar ]
+--
+[ Sou aluno ] [ Sou empresa ]
+}
+}
+@endsalt
+vagas
+@startsalt
+{
+{+Vagas de Estágio
+
+Buscar: | "            "
+
+--------------------------------
+
+Estágio em TI  
+Empresa: XPTO  
+[ Ver detalhes ] [ Candidatar ]
+
+--
+
+Estágio em Administração  
+Empresa: ABC  
+[ Ver detalhes ] [ Candidatar ]
+
+}
+}
+@endsalt
+dashboard
+@startsalt
+{
+{+Dashboard
+
+{<
++ Dashboard
++ Vagas
++ Minhas candidaturas
++ Meu estágio
++ Documentos
+}
+|
+
+Bem-vindo, Usuário!
+
+-------------------------
+
+Vagas disponíveis: X  
+Candidaturas: X  
+Status do estágio: Ativo  
+
+}
+}
+@endsalt
