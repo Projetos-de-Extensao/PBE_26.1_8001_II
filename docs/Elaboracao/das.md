@@ -197,6 +197,49 @@ O sistema busca atender critérios de qualidade como:
 - Engenharia de Software Moderna  
 - Documentações oficiais das tecnologias utilizadas  
 
+
+---
+
+---
+Diagrama de Classes — Visão de Dados (SGE)
+@startuml
+
+class Aluno {
+  +id: int
+  +nome: string
+  +email: string
+  +senha: string
+  +curso: string
+}
+
+class Empresa {
+  +id: int
+  +nome: string
+  +email: string
+  +cnpj: string
+}
+
+class Vaga {
+  +id: int
+  +titulo: string
+  +descricao: string
+  +requisitos: string
+  +status: string
+}
+
+class Candidatura {
+  +id: int
+  +data: date
+  +status: string
+}
+
+' RELACIONAMENTOS
+
+Aluno "1" -- "0..*" Candidatura : realiza
+Vaga "1" -- "0..*" Candidatura : recebe
+Empresa "1" -- "0..*" Vaga : publica
+
+@enduml
 ---
 
 ## Histórico de Versão
