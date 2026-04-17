@@ -23,12 +23,6 @@ Após essa etapa, foi escolhida a ferramenta Figma para a criação do protótip
 ### 1. Login
 **Propósito:** Autenticação do usuário no sistema
 
-**Elementos principais:**
-- Campo de email/matrícula
-- Campo de senha
-- Botão de login
-- Link para recuperação de senha
-
 ```
 @startsalt
 {
@@ -48,12 +42,6 @@ Após essa etapa, foi escolhida a ferramenta Figma para a criação do protótip
 ### 2. Detalhes da Solicitação
 **Propósito:** Visualizar todas as informações de uma solicitação de estágio
 
-**Elementos principais:**
-- Dados do aluno (nome, curso, empresa)
-- Informações do supervisor
-- Status atual da solicitação
-- Documentos anexados
-- Resultado da análise automática (IA)
 
 ```
 @startsalt
@@ -83,12 +71,6 @@ Após essa etapa, foi escolhida a ferramenta Figma para a criação do protótip
 ### 3. Painel do Coordenador
 **Propósito:** Gerenciamento e acompanhamento de todas as solicitações
 
-**Elementos principais:**
-- Contadores de solicitações pendentes
-- Lista de solicitações recentes
-- Checkboxes para seleção múltipla
-- Botões de ação (Ver detalhes, Aprovar, Rejeitar)
-- Menu superior com dados estatísticos
 
 ```
 @startsalt
@@ -122,12 +104,6 @@ Após essa etapa, foi escolhida a ferramenta Figma para a criação do protótip
 ### 4. Acompanhamento da Solicitação
 **Propósito:** Permitir que o aluno acompanhe o progresso de sua solicitação
 
-**Elementos principais:**
-- Identificação da solicitação (#2026-01)
-- Status atual
-- Timeline com passos concluídos e pendentes
-- Checkboxes indicando progresso
-- Botões de ação (Atualizar, Voltar)
 
 ```
 @startsalt
