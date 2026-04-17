@@ -201,7 +201,9 @@ O sistema busca atender critérios de qualidade como:
 ---
 
 ---
-Diagrama de Classes — Visão de Dados (SGE)
+## Diagrama de Classes — Visão de Dados (SGE)
+
+```plantuml
 @startuml
 
 class Aluno {
@@ -240,6 +242,8 @@ Vaga "1" -- "0..*" Candidatura : recebe
 Empresa "1" -- "0..*" Vaga : publica
 
 @enduml
+```
+
 ---
 
 ## Histórico de Versão
