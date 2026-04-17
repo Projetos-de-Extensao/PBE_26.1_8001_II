@@ -1,11 +1,15 @@
 @startsalt
 {
-{^Login
-Email: | "            "
-Senha: | "            "
+{^"Sistema de Validação de Estágios - Login"
+
+[ E-mail:            ]
+[ Senha:             ]
+
 [ Entrar ]
---
-[ Sou aluno ] [ Sou empresa ]
+
+() Aluno
+() Coordenador
+
 }
 }
 @endsalt
