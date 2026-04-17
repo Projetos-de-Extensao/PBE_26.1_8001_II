@@ -1,0 +1,109 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+class Usuario {
+  - id: int
+  - nome: String
+  - email: String
+  - senha: String
+  - perfil: Perfil
+  + login(): void
+  + logout(): void
+  + recuperarSenha(): void
+}
+
+class Aluno {
+  - matricula: String
+  - curso: String
+  - periodo: int
+  + cadastrarEstagio(): Estagio
+  + enviarDocumento(): Documento
+  + visualizarStatus(): String
+}
+
+class Professor {
+  - registro: String
+  - departamento: String
+  + validarEstagio(): void
+  + solicitarCorrecao(): void
+  + visualizarAlunos(): List<Aluno>
+}
+
+class Coordenador {
+  + gerarRelatorio(): Relatorio
+  + visualizarTodosEstagios(): List<Estagio>
+  + filtrarPorCurso(): List<Estagio>
+}
+
+class Estagio {
+  - id: int
+  - empresa: String
+  - area: String
+  - cargaHoraria: int
+  - dataInicio: Date
+  - dataFim: Date
+  - status: StatusEstagio
+  - aluno: Aluno
+  - professor: Professor
+  + atualizarStatus(): void
+}
+
+class Documento {
+  - id: int
+  - tipo: TipoDocumento
+  - arquivo: String
+  - dataEnvio: Date
+  - status: StatusDocumento
+  - estagio: Estagio
+  + enviar(): void
+  + visualizar(): void
+}
+
+class Relatorio {
+  - id: int
+  - dataGeracao: Date
+  - totalEstagios: int
+  - totalConcluidos: int
+  - totalPendentes: int
+  - curso: String
+  + gerar(): void
+  + exportar(): void
+}
+
+enum Perfil {
+  ALUNO
+  PROFESSOR
+  COORDENADOR
+}
+
+enum StatusEstagio {
+  PENDENTE
+  EM_ANDAMENTO
+  CONCLUIDO
+  REPROVADO
+}
+
+enum TipoDocumento {
+  TERMO_COMPROMISSO
+  APOLICE
+  RELATORIO_PARCIAL
+  RELATORIO_FINAL
+}
+
+enum StatusDocumento {
+  PENDENTE
+  APROVADO
+  REJEITADO
+}
+
+Usuario <|-- Aluno
+Usuario <|-- Professor
+Usuario <|-- Coordenador
+
+Aluno "1" -- "0..*" Estagio
+Professor "1" -- "0..*" Estagio
+Estagio "1" -- "0..*" Documento
+Coordenador "1" -- "0..*" Relatorio
+
+@enduml
