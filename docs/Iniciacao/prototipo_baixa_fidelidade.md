@@ -1,105 +1,82 @@
----
-id: prototipobaixa
-title: Protótipo Baixa Fidelidade
----
-## Introdução
+Introdução
 
-<p align = "justify">
-A construção do protótipo de alta fidelidade auxilia a equipe de desenvolvimento a encontrar um nível de detalhes abrangentes, extrair funcionalidades, testar usabilidade, e também fornece uma base para o gerenciamento do projeto pois com o protótipo é possível realizar estimativas de quanto tempo será necessário desempenhar em cada funcionalidade.
-</p>
+A construção de um protótipo de alta fidelidade permite que a equipe de desenvolvimento trabalhe com um nível maior de detalhamento do sistema.
 
-## Metodologia
+Com isso, torna-se mais fácil identificar funcionalidades, validar a usabilidade e antecipar possíveis ajustes antes da implementação. Além disso, o protótipo serve como apoio no gerenciamento do projeto, pois possibilita estimar o tempo necessário para o desenvolvimento de cada funcionalidade.
 
-<p align = "justify">
-Iniciamos o projeto através dos levantamentos iniciais da equipe, após discussões a ferramenta Figma foi selecionada para produzir o protótipo de alta fidelidade com auxílio do Material Design Color Tool.
-</p>
+Metodologia
 
-Detalhes solicitação
+O projeto teve início a partir dos levantamentos realizados pela equipe, seguidos de discussões para definição das melhores abordagens.
+
+Após essa etapa, foi escolhida a ferramenta Figma para a criação do protótipo de alta fidelidade, com apoio do Material Design Color Tool na definição da identidade visual.
+
+Detalhes da Solicitação
 @startsalt
 {
-{^"Detalhes da Solicitação"
+  {^"Detalhes da Solicitação"
 
-Aluno:       | "João Silva"
-Curso:       | "Sistemas de Informação"
-Empresa:     | "Tech Solutions"
-Supervisor:  | "Carlos Lima"
-Status:      | "Em análise"
+    Aluno:      | João Silva
+    Curso:      | Sistemas de Informação
+    Empresa:    | Tech Solutions
+    Supervisor: | Carlos Lima
+    Status:     | Em análise
 
-----------------------
+    Documentos:
+    [Ver Termo] [Ver Plano] [Ver Matrícula]
 
-Documentos:
-[ Ver Termo ]
-[ Ver Plano ]
-[ Ver Matrícula ]
+    Resultado IA:
+    Pendências em assinatura e supervisor
 
-----------------------
-
-Resultado IA:
-"Pendências em assinatura e supervisor"
-
-----------------------
-
-[ Aprovar ]
-[ Solicitar ajuste ]
-[ Rejeitar ]
-
-}
+    [Aprovar] [Solicitar ajuste] [Rejeitar]
+  }
 }
 @endsalt
 
-Painel Coordenador
+Painel do Coordenador
 @startsalt
 {
-{^"Painel do Coordenador"
+  {^"Painel do Coordenador"
 
-Solicitações pendentes: 8
-Pendências críticas: 3
+    Solicitações pendentes: 8
+    Pendências críticas: 3
 
-----------------------
+    ()
+    Solicitação #2026-01 - João Silva
 
-() Solicitação #2026-01 - João Silva
-() Solicitação #2026-02 - Maria Souza
-() Solicitação #2026-03 - Pedro Lima
+    ()
+    Solicitação #2026-02 - Maria Souza
 
-----------------------
+    ()
+    Solicitação #2026-03 - Pedro Lima
 
-[ Ver detalhes ]
-[ Aprovar ]
-[ Rejeitar ]
+    [Ver detalhes] [Aprovar] [Rejeitar]
 
-----------------------
+    --
 
-[ Sair ]
-
+    [Sair]
+  }
 }
-}
-@endsalt
-@endsalt
+@endsal
 
-Acompanhamento Status
+Acompanhamento da Solicitação
 @startsalt
 {
-{^"Acompanhamento"
+  {^"Acompanhamento"
 
-Solicitação: #2026-01
-Aluno: João Silva
+    Solicitação: #2026-01
+    Aluno: João Silva
 
-----------------------
+    Status: Em análise
 
-Status: Em análise
+    [x] Solicitação enviada
+    [x] Documentos recebidos
+    [ ] Validação IA
+    [ ] Aprovação
+    [ ] Finalizado
 
-----------------------
-
-[x] Solicitação enviada
-[x] Documentos recebidos
-[ ] Validação IA
-[ ] Aprovação
-[ ] Finalizado
-
-----------------------
-
-[ Atualizar ] [ Voltar ]
-
-}
+    [Atualizar] [Voltar]
+  }
 }
 @endsalt
+
+Se quiser deixar ainda mais
