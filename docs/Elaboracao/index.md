@@ -14,8 +14,7 @@ Nesta fase, refinamos os requisitos do sistema de gestão de estágios, definimo
 - [Documento de Arquitetura de Software](das.md)
 - [Casos de Uso](casos_de_uso.md)
 - [Diagrama de Classes](diagrama_de_classes.md)
-- [Diagrama de Sequência](diagrama_de_sequencia.md)
-- [Protótipo de Alta Fidelidade](prototipo_alta_fidelidade.md)
+
 
 ### Resultado da fase:
 
