@@ -10,7 +10,7 @@ O projeto teve início a partir dos levantamentos realizados pela equipe, seguid
 
 Após essa etapa, foi escolhida a ferramenta Figma para a criação do protótipo de alta fidelidade, com apoio do Material Design Color Tool na definição da identidade visual.
 
-Detalhes da Solicitação
+ Detalhes da Solicitação
 @startsalt
 {
   {^"Detalhes da Solicitação"
@@ -31,7 +31,6 @@ Detalhes da Solicitação
   }
 }
 @endsalt
-
 Painel do Coordenador
 @startsalt
 {
@@ -44,7 +43,7 @@ Painel do Coordenador
     Solicitação #2026-01 - João Silva
 
     ()
-    Solicitação #2026-02 - Maria Souza
+    Solicação #2026-02 - Maria Souza
 
     ()
     Solicitação #2026-03 - Pedro Lima
@@ -56,8 +55,7 @@ Painel do Coordenador
     [Sair]
   }
 }
-@endsal
-
+@endsalt
 Acompanhamento da Solicitação
 @startsalt
 {
@@ -78,5 +76,3 @@ Acompanhamento da Solicitação
   }
 }
 @endsalt
-
-Se quiser deixar ainda mais
