@@ -1,298 +1,369 @@
 ---
-id: diagrama_de_casos de uso
+id: diagrama_de_casos_de_uso
 title: Diagrama de Casos de Uso
 ---
 
 ## Casos de Uso
 
-### Descrição:
-
-- Contas
-	- Criação
-	- Entrada
-	- Alteração
-	- Recuperar Senha
-	- Exclusão Lógica
-	- Visualização
-
-- Perfis
-	- Edição
-	- Pesquisar
-	- Visualização
-	- Seguir/Deixar de Seguir
-
-- Postagens (Público) 	 	
-	- Criação
-	- Exclusão
-	- Interação
-	- Visualização
-
-- Mensagens (Privado)
-	- Criação
-	- Exclusão
-	- Visualização
-
-- Galerias
-	- Albuns
-- Blogs
-- Grupos
-
-### Criação de uma conta no sistema
-
-* Atores:
-
-	- Usuário
-	- Sistema
-
-- Pré-Condições:
-	- Nenhuma
-
-* Fluxo Básico:
-    1. Usuário fornece e-mail, senha e confirmações
-    2. Dados do Usuário são validados pelo Sistema
-    3. Dados do Usuário são encriptados pelo Sistema
-    4. Dados do Usuário são persistidos pelo Sistema
-    5. Sistema gera um link com prazo de expiração
-    6. Sistema envia e-mail de verificação, com o link, para o Usuário
-    7. Usuário confirma o e-mail antes do link expirar
-    8. Sistema confirma que o Cadastro do Usuário foi realizado com sucesso
-    9. Sistema redireciona o Usuário para a página de Entrada
-
-- Fluxos Alternativos:
-	- 2a. E-mail do Usuário é inválido
-		2a1. Sistema exibe mensagem de erro
-	- 2b. Senha do Usuário não respeita regras de segurança
-		- 2b1. Sistema exibe mensagem de erro
-	- 3a. Usuário tenta confirmar o e-mail depois de o link expirar
-		- 3a1. Sistema sugere que o Usuário realize um novo Cadastro
+Este documento apresenta os principais casos de uso do Sistema de Gestão de Estágios, descrevendo as interações entre os atores e as funcionalidades disponíveis no sistema.
+
+## Diagrama de Casos de Uso
+
+![Diagrama de Casos de Uso](assets/diagrama_classes/casos_de_uso.png)
+
+### Principais Casos de Uso
 
-### Entrada do usuário no sistema
+#### Aluno
+- Realizar cadastro
+- Realizar login
+- Atualizar dados cadastrais
+- Recuperar senha
+- Cadastrar estágio
+- Enviar documento
+- Visualizar status do estágio
+- Visualizar documentos enviados
+
+#### Professor Orientador
+- Realizar login
+- Validar estágio
+- Solicitar correção
+- Visualizar alunos orientados
+- Visualizar documentos do estágio
+
+#### Coordenador
+- Realizar login
+- Visualizar todos os estágios
+- Filtrar estágios por curso
+- Gerar relatório
+
+---
 
-- Atores:
-	- Usuário
-	- Sistema
+## Realizar cadastro no sistema
+
+**Atores:**
+- Usuário
+- Sistema
 
-- Pré-Condições:
-	Usuário deve estar cadastrado
+**Pré-condições:**
+- Nenhuma
+
+**Fluxo Básico:**
+1. Usuário acessa a tela de cadastro.
+2. Usuário informa os dados solicitados.
+3. Sistema valida os dados informados.
+4. Sistema registra o novo usuário.
+5. Sistema confirma a realização do cadastro.
+
+**Fluxos Alternativos:**
+- 3a. Dados inválidos ou incompletos.
+  - 3a1. Sistema exibe mensagem de erro.
+- 4a. Usuário já cadastrado no sistema.
+  - 4a1. Sistema informa que já existe cadastro com os dados fornecidos.
+
+---
 
-- Fluxo Básico:
-    - 1. Usuário fornece e-mail e senha
-	- 2. Sistema autentica o Usuário
-	- 3. Sistema redireciona o Usuário para a página inicial
+## Realizar login no sistema
+
+**Atores:**
+- Usuário
+- Sistema
+
+**Pré-condições:**
+- Usuário deve estar cadastrado no sistema
+
+**Fluxo Básico:**
+1. Usuário acessa a tela de login.
+2. Usuário informa e-mail e senha.
+3. Sistema autentica o usuário.
+4. Sistema redireciona o usuário para a área principal do sistema.
+
+**Fluxos Alternativos:**
+- 3a. Dados de acesso inválidos.
+  - 3a1. Sistema exibe mensagem de erro.
+- 3b. Conta desativada.
+  - 3b1. Sistema informa que o acesso não pode ser realizado.
+
+---
+
+## Atualizar dados cadastrais
+
+**Atores:**
+- Usuário
+- Sistema
+
+**Pré-condições:**
+- Usuário deve estar autenticado no sistema
+
+**Fluxo Básico:**
+1. Usuário acessa a área de edição cadastral.
+2. Usuário altera os dados desejados.
+3. Sistema valida as informações atualizadas.
+4. Sistema salva as alterações.
+5. Sistema confirma a atualização dos dados.
+
+**Fluxos Alternativos:**
+- 3a. Dados inválidos.
+  - 3a1. Sistema exibe mensagem de erro.
+- 4a. Falha no salvamento.
+  - 4a1. Sistema informa que não foi possível concluir a atualização.
 
-- Fluxos Alternativos:
-	- 2a. Dados do Usuário Inválidos
-		- 2a1. Sistema exibe mensagem de erro
-	- 3a. Primeio acesso do Usuário
-		- 3a1. Sistema redireciona o Usuário para a página de edição de perfil
+---
 
-### Alteração de dados da conta
+## Recuperar senha
 
-* Atores:
+**Atores:**
+- Usuário
+- Sistema
 
-	- Usuário
-	- Sistema
+**Pré-condições:**
+- Usuário deve possuir cadastro no sistema
 
-- Pré-Condições:
-	Usuário deve estar autenticado no sistema
+**Fluxo Básico:**
+1. Usuário acessa a opção de recuperação de senha.
+2. Usuário informa o e-mail cadastrado.
+3. Sistema valida o e-mail informado.
+4. Sistema envia instruções para redefinição de senha.
+5. Usuário realiza a redefinição.
+6. Sistema confirma a atualização da senha.
 
-* Fluxo Básico:
-	1. Usuário acessa a área de configurações da conta
-	2. Usuário altera os dados desejados
-	3. Sistema valida os novos dados
-	4. Sistema atualiza as informações do Usuário
-	5. Sistema confirma a atualização
+**Fluxos Alternativos:**
+- 3a. E-mail não encontrado.
+  - 3a1. Sistema informa que não existe cadastro vinculado ao e-mail.
+- 4a. Falha no envio.
+  - 4a1. Sistema solicita nova tentativa posteriormente.
 
-- Fluxos Alternativos:
-	- 3a. Dados inválidos
-		- 3a1. Sistema exibe mensagem de erro
-	- 4a. Falha na atualização
-		- 4a1. Sistema informa erro ao Usuário
+---
 
+## Cadastrar estágio
 
-### Recuperar senha
+**Atores:**
+- Aluno
+- Sistema
 
-* Atores:
+**Pré-condições:**
+- Aluno deve estar autenticado no sistema
 
-	- Usuário
-	- Sistema
+**Fluxo Básico:**
+1. Aluno acessa a funcionalidade de cadastro de estágio.
+2. Aluno informa os dados do estágio.
+3. Sistema valida os dados informados.
+4. Sistema registra o estágio.
+5. Sistema confirma o cadastro do estágio.
 
-- Pré-Condições:
-	Usuário deve possuir cadastro no sistema
+**Fluxos Alternativos:**
+- 3a. Dados obrigatórios não preenchidos.
+  - 3a1. Sistema exibe mensagem de erro.
+- 4a. Falha no cadastro.
+  - 4a1. Sistema informa que o estágio não pôde ser registrado.
 
-* Fluxo Básico:
-	1. Usuário solicita recuperação de senha
-	2. Usuário informa o e-mail cadastrado
-	3. Sistema valida o e-mail
-	4. Sistema envia link de recuperação
-	5. Usuário acessa o link
-	6. Usuário define nova senha
-	7. Sistema atualiza a senha
-	8. Sistema confirma alteração
+---
 
-- Fluxos Alternativos:
-	- 3a. E-mail não encontrado
-		- 3a1. Sistema informa erro
-	- 5a. Link expirado
-		- 5a1. Sistema solicita nova requisição
+## Enviar documento
 
+**Atores:**
+- Aluno
+- Sistema
 
-### Exclusão lógica de conta
+**Pré-condições:**
+- Aluno deve estar autenticado no sistema
+- Estágio deve estar cadastrado
 
-* Atores:
+**Fluxo Básico:**
+1. Aluno acessa a área de documentos do estágio.
+2. Aluno seleciona o tipo de documento.
+3. Aluno envia o arquivo.
+4. Sistema valida o envio.
+5. Sistema registra o documento no estágio.
+6. Sistema confirma o envio do documento.
 
-	- Usuário
-	- Sistema
+**Fluxos Alternativos:**
+- 4a. Arquivo em formato inválido.
+  - 4a1. Sistema exibe mensagem de erro.
+- 4b. Documento não enviado corretamente.
+  - 4b1. Sistema solicita novo envio.
 
-- Pré-Condições:
-	Usuário autenticado
+---
 
-* Fluxo Básico:
-	1. Usuário solicita exclusão da conta
-	2. Sistema solicita confirmação
-	3. Usuário confirma ação
-	4. Sistema desativa a conta
-	5. Sistema encerra sessão do Usuário
+## Visualizar status do estágio
 
-- Fluxos Alternativos:
-	- 3a. Usuário cancela operação
-		- 3a1. Sistema mantém conta ativa
+**Atores:**
+- Aluno
+- Sistema
 
+**Pré-condições:**
+- Aluno deve estar autenticado no sistema
+- Estágio deve estar cadastrado
 
-### Visualização de perfil
+**Fluxo Básico:**
+1. Aluno acessa a área de acompanhamento.
+2. Sistema busca as informações do estágio.
+3. Sistema exibe o status atual do estágio.
 
-* Atores:
+**Fluxos Alternativos:**
+- 2a. Estágio não localizado.
+  - 2a1. Sistema informa que não há registro disponível.
 
-	- Usuário
-	- Sistema
+---
 
-- Pré-Condições:
-	Nenhuma
+## Visualizar documentos do estágio
 
-* Fluxo Básico:
-	1. Usuário acessa um perfil
-	2. Sistema busca os dados do perfil
-	3. Sistema exibe as informações
+**Atores:**
+- Aluno
+- Professor Orientador
+- Sistema
 
+**Pré-condições:**
+- Usuário deve estar autenticado no sistema
+- Estágio deve estar cadastrado
 
-### Edição de perfil
+**Fluxo Básico:**
+1. Usuário acessa a área de documentos do estágio.
+2. Sistema busca os documentos vinculados.
+3. Sistema exibe os documentos disponíveis.
 
-* Atores:
+**Fluxos Alternativos:**
+- 2a. Nenhum documento encontrado.
+  - 2a1. Sistema informa que não existem documentos cadastrados.
 
-	- Usuário
-	- Sistema
+---
 
-- Pré-Condições:
-	Usuário autenticado
+## Validar estágio
 
-* Fluxo Básico:
-	1. Usuário acessa seu perfil
-	2. Usuário edita informações
-	3. Sistema valida os dados
-	4. Sistema salva alterações
-	5. Sistema confirma atualização
+**Atores:**
+- Professor Orientador
+- Sistema
 
-- Fluxos Alternativos:
-	- 3a. Dados inválidos
-		- 3a1. Sistema exibe erro
+**Pré-condições:**
+- Professor Orientador deve estar autenticado no sistema
+- Estágio deve estar cadastrado
 
+**Fluxo Básico:**
+1. Professor Orientador acessa a lista de estágios.
+2. Professor Orientador seleciona um estágio.
+3. Sistema exibe os dados e documentos do estágio.
+4. Professor Orientador realiza a validação.
+5. Sistema atualiza o status do estágio.
+6. Sistema confirma a validação.
 
-### Seguir usuário
+**Fluxos Alternativos:**
+- 3a. Documentação incompleta.
+  - 3a1. Sistema informa que a validação não pode ser concluída.
+- 4a. Professor decide não validar o estágio.
+  - 4a1. Sistema mantém o status atual.
 
-* Atores:
+---
 
-	- Usuário
-	- Sistema
+## Solicitar correção
 
-- Pré-Condições:
-	Usuário autenticado
+**Atores:**
+- Professor Orientador
+- Sistema
 
-* Fluxo Básico:
-	1. Usuário acessa perfil de outro usuário
-	2. Usuário seleciona a opção "seguir"
-	3. Sistema registra a ação
-	4. Sistema atualiza lista de seguidores
+**Pré-condições:**
+- Professor Orientador deve estar autenticado no sistema
+- Estágio deve estar cadastrado
 
+**Fluxo Básico:**
+1. Professor Orientador acessa os dados do estágio.
+2. Professor Orientador identifica pendências.
+3. Professor Orientador registra a solicitação de correção.
+4. Sistema atualiza o status do estágio.
+5. Sistema informa ao aluno que há correções pendentes.
 
-### Deixar de seguir usuário
+**Fluxos Alternativos:**
+- 3a. Falha no registro da solicitação.
+  - 3a1. Sistema informa erro ao professor.
 
-* Atores:
+---
 
-	- Usuário
-	- Sistema
+## Visualizar alunos orientados
 
-- Pré-Condições:
-	Usuário autenticado
+**Atores:**
+- Professor Orientador
+- Sistema
 
-* Fluxo Básico:
-	1. Usuário acessa perfil seguido
-	2. Usuário seleciona "deixar de seguir"
-	3. Sistema remove vínculo
-	4. Sistema atualiza lista
+**Pré-condições:**
+- Professor Orientador deve estar autenticado no sistema
 
+**Fluxo Básico:**
+1. Professor Orientador acessa a área de alunos orientados.
+2. Sistema busca os alunos vinculados.
+3. Sistema exibe a lista de alunos orientados.
 
-### Criação de postagem
+**Fluxos Alternativos:**
+- 2a. Nenhum aluno vinculado.
+  - 2a1. Sistema informa que não há alunos orientados cadastrados.
 
-* Atores:
+---
 
-	- Usuário
-	- Sistema
+## Visualizar todos os estágios
 
-- Pré-Condições:
-	Usuário autenticado
+**Atores:**
+- Coordenador
+- Sistema
 
-* Fluxo Básico:
-	1. Usuário cria nova postagem
-	2. Usuário adiciona conteúdo
-	3. Sistema valida conteúdo
-	4. Sistema publica postagem
+**Pré-condições:**
+- Coordenador deve estar autenticado no sistema
 
+**Fluxo Básico:**
+1. Coordenador acessa a área de estágios.
+2. Sistema busca os registros disponíveis.
+3. Sistema exibe todos os estágios cadastrados.
 
-### Interação com postagem
+**Fluxos Alternativos:**
+- 2a. Nenhum estágio cadastrado.
+  - 2a1. Sistema informa que não há estágios registrados.
 
-* Atores:
+---
 
-	- Usuário
-	- Sistema
+## Filtrar estágios por curso
 
-- Pré-Condições:
-	Postagem existente
+**Atores:**
+- Coordenador
+- Sistema
 
-* Fluxo Básico:
-	1. Usuário acessa a postagem
-	2. Usuário realiza interação (curtir ou comentar)
-	3. Sistema registra interação
-	4. Sistema atualiza os dados da postagem
+**Pré-condições:**
+- Coordenador deve estar autenticado no sistema
+- Devem existir estágios cadastrados
 
+**Fluxo Básico:**
+1. Coordenador acessa a funcionalidade de filtro.
+2. Coordenador seleciona o curso desejado.
+3. Sistema aplica o filtro.
+4. Sistema exibe os estágios correspondentes ao curso informado.
 
-### Envio de mensagem privada
+**Fluxos Alternativos:**
+- 4a. Nenhum estágio encontrado para o curso selecionado.
+  - 4a1. Sistema informa que não existem resultados.
 
-* Atores:
+---
 
-	- Usuário
-	- Sistema
+## Gerar relatório
 
-- Pré-Condições:
-	Usuário autenticado
+**Atores:**
+- Coordenador
+- Sistema
 
-* Fluxo Básico:
-	1. Usuário seleciona destinatário
-	2. Usuário escreve mensagem
-	3. Sistema envia mensagem
-	4. Sistema registra envio
+**Pré-condições:**
+- Coordenador deve estar autenticado no sistema
+- Devem existir dados cadastrados no sistema
 
+**Fluxo Básico:**
+1. Coordenador acessa a funcionalidade de relatórios.
+2. Coordenador solicita a geração do relatório.
+3. Sistema reúne os dados necessários.
+4. Sistema gera o relatório.
+5. Sistema exibe ou disponibiliza o relatório gerado.
 
-### Visualização de mensagens
+**Fluxos Alternativos:**
+- 3a. Dados insuficientes para geração.
+  - 3a1. Sistema informa que não foi possível gerar o relatório.
+- 4a. Falha na geração.
+  - 4a1. Sistema informa erro ao coordenador.
 
-* Atores:
+## Autor(es)
 
-	- Usuário
-	- Sistema
-
-- Pré-Condições:
-	Usuário autenticado
-
-* Fluxo Básico:
-	1. Usuário acessa a conversa
-	2. Sistema carrega as mensagens
-	3. Sistema exibe o conteúdo
+| Data     | Versão | Descrição                         | Autor(es)                                      |
+| -------- | ------ | --------------------------------- | ---------------------------------------------- |
+| 16/04/25 | 1.0    | Criação do documento              | [Davi, Rafael, Jorge Alves, Gabriel, Gabriel] |
+| 16/04/25 | 1.1    | Adição dos casos de uso principais | [Davi, Rafael, Jorge Alves, Gabriel, Gabriel] |

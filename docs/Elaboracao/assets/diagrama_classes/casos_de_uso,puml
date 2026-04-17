@@ -1,0 +1,47 @@
+@startuml
+left to right direction
+
+actor "Aluno" as Aluno
+actor "Professor Orientador" as Professor
+actor "Coordenador" as Coordenador
+actor "Usuário" as Usuario
+
+rectangle "Sistema de Gestão de Estágios" {
+  usecase "Realizar cadastro" as UC1
+  usecase "Realizar login" as UC2
+  usecase "Atualizar dados cadastrais" as UC3
+  usecase "Recuperar senha" as UC4
+
+  usecase "Cadastrar estágio" as UC5
+  usecase "Enviar documento" as UC6
+  usecase "Visualizar status do estágio" as UC7
+  usecase "Visualizar documentos do estágio" as UC8
+
+  usecase "Validar estágio" as UC9
+  usecase "Solicitar correção" as UC10
+  usecase "Visualizar alunos orientados" as UC11
+
+  usecase "Visualizar todos os estágios" as UC12
+  usecase "Filtrar estágios por curso" as UC13
+  usecase "Gerar relatório" as UC14
+}
+
+Usuario --> UC1
+Usuario --> UC2
+Usuario --> UC3
+Usuario --> UC4
+
+Aluno --> UC5
+Aluno --> UC6
+Aluno --> UC7
+Aluno --> UC8
+
+Professor --> UC8
+Professor --> UC9
+Professor --> UC10
+Professor --> UC11
+
+Coordenador --> UC12
+Coordenador --> UC13
+Coordenador --> UC14
+@enduml
