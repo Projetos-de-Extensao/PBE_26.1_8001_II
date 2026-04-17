@@ -1,0 +1,26 @@
+@startsalt
+{
+{^"Painel do Coordenador"
+
+Solicitações pendentes: 8
+Pendências críticas: 3
+
+----------------------
+
+() Solicitação #2026-01 - João Silva
+() Solicitação #2026-02 - Maria Souza
+() Solicitação #2026-03 - Pedro Lima
+
+----------------------
+
+[ Ver detalhes ]
+[ Aprovar ]
+[ Rejeitar ]
+
+----------------------
+
+[ Sair ]
+
+}
+}
+@endsalt

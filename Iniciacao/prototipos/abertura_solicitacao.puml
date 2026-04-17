@@ -1,0 +1,28 @@
+@startsalt
+{
+{^"Nova Solicitação de Estágio"
+
+Aluno:            | "João Silva"
+Curso:            | "Sistemas de Informação"
+Empresa:          | "                "
+Supervisor:       | "                "
+
+----------------------
+
+Tipo de estágio:  | "Obrigatório   v"
+Data de início:   | "                "
+Data de término:  | "                "
+
+----------------------
+
+Observações:
+"                                        "
+
+----------------------
+
+[ Enviar solicitação ]
+[ Cancelar ]
+
+}
+}
+@endsalt
