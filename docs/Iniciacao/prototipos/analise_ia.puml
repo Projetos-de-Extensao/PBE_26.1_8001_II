@@ -1,0 +1,25 @@
+@startsalt
+{
+{^"Análise de Conformidade"
+
+Documento: Termo de Compromisso
+
+----------------------
+
+Resultado:
+"Pendências encontradas"
+
+----------------------
+
+[x] Carga horária ok
+[x] Dados do aluno ok
+[ ] Assinatura ausente
+[ ] Supervisor incompleto
+
+----------------------
+
+[ Reanalisar ] [ Encaminhar ]
+
+}
+}
+@endsalt

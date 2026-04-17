@@ -1,0 +1,26 @@
+@startsalt
+{
+{^"Acompanhamento"
+
+Solicitação: #2026-01
+Aluno: João Silva
+
+----------------------
+
+Status: Em análise
+
+----------------------
+
+[x] Solicitação enviada
+[x] Documentos recebidos
+[ ] Validação IA
+[ ] Aprovação
+[ ] Finalizado
+
+----------------------
+
+[ Atualizar ] [ Voltar ]
+
+}
+}
+@endsalt
