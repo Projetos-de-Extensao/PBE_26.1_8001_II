@@ -9,7 +9,7 @@ Este documento apresenta os principais casos de uso do Sistema de Gestão de Est
 
 ## Diagrama de Casos de Uso
 
-![Diagrama de Casos de Uso](assets/diagrama_classes/casos_de_uso.png)
+![Diagrama de Casos de Uso](../assets/diagrama_classes/casos_de_uso.png)
 
 ### Principais Casos de Uso
 
