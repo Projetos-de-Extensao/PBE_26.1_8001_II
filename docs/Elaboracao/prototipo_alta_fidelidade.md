@@ -1,171 +1,206 @@
+# Protótipo de Alta Fidelidade
+
+## Introdução
+
+Este documento descreve o Protótipo de Alta Fidelidade do Sistema de Gestão de Estágios. O protótipo foi desenvolvido com o objetivo de validar a interface e os fluxos de navegação antes da implementação.
+
+> **Acesso ao protótipo interativo:** [Visualizar no Figma](https://www.figma.com) *(substituir pelo link real do Figma quando disponível)*
+
 ---
-id: diagrama_de_casos de uso
-title: Diagrama de Casos de Uso
+
+## Telas do Sistema
+
+### 1. Tela de Login
+
+A tela de login é o ponto de entrada do sistema. O usuário informa seu e-mail e senha para autenticação. Há opção de seleção de perfil (Aluno, Empresa ou Instituição) para redirecionamento correto após o login.
+
+**Elementos principais:**
+- Campo de e-mail
+- Campo de senha
+- Botão "Entrar"
+- Link "Esqueci minha senha"
+- Link "Criar conta"
+
 ---
 
-## Casos de Uso
+### 2. Tela de Cadastro — Aluno
 
-### Descrição:
+Formulário de registro para novos alunos. Coleta informações acadêmicas e pessoais necessárias para o uso do sistema.
 
-- Contas
-	- Criação
-	- Entrada
-	- Alteração
-	- Recuperar Senha
-	- Exclusão Lógica
-	- Visualização
+**Campos:**
+- Nome completo
+- E-mail institucional
+- Matrícula
+- Curso
+- Semestre atual
+- Senha e confirmação de senha
 
-- Perfis
-	- Edição
-	- Pesquisar
-	- Visualização
-	- Seguir/Deixar de Seguir
+---
 
-- Postagens (Público) 	 	
-	- Criação
-	- Exclusão
-	- Interação
-	- Visualização
+### 3. Tela de Cadastro — Empresa
 
-- Mensagens (Privado)
-	- Criação
-	- Exclusão
-	- Visualização
+Formulário de registro para empresas parceiras. Coleta dados institucionais e de contato.
 
-- Galerias
-	- Albuns
-- Blogs
-- Grupos
+**Campos:**
+- Razão social
+- CNPJ
+- Setor de atuação
+- E-mail corporativo
+- Website
+- Senha e confirmação de senha
 
-### Criação de uma conta no sistema
+---
 
-* Atores:
+### 4. Dashboard — Aluno
 
-	- Usuário
-	- Sistema
+Painel principal do aluno, exibindo um resumo das atividades e acesso rápido às funcionalidades.
 
-- Pré-Condições:
-	- Nenhuma
+**Elementos:**
+- Contador de vagas disponíveis
+- Contador de candidaturas ativas
+- Status do estágio atual (se houver)
+- Últimas vagas recomendadas
+- Menu lateral com navegação completa
 
-* Fluxo Básico:
-    1. Usuário fornece e-mail, senha e confirmações
-    2. Dados do Usuário são validados pelo Sistema
-    3. Dados do Usuário são encriptados pelo Sistema
-    4. Dados do Usuário são persistidos pelo Sistema
-    5. Sistema gera um link com prazo de expiração
-    6. Sistema envia e-mail de verificação, com o link, para o Usuário
-    7. Usuário confirma o e-mail antes do link expirar
-    8. Sistema confirma que o Cadastro do Usuário foi realizado com sucesso
-    9. Sistema redireciona o Usuário para a página de Entrada
+**Menu lateral:**
+- Dashboard
+- Buscar Vagas
+- Minhas Candidaturas
+- Meu Estágio
+- Meus Documentos
+- Perfil
 
-- Fluxos Alternativos:
-	- 2a. E-mail do Usuário é inválido
-		2a1. Sistema exibe mensagem de erro
-	- 2b. Senha do Usuário não respeita regras de segurança
-		- 2b1. Sistema exibe mensagem de erro
-	- 3a. Usuário tenta confirmar o e-mail depois de o link expirar
-		- 3a1. Sistema sugere que o Usuário realize um novo Cadastro
+---
 
-### Entrada do usuário no sistema
+### 5. Dashboard — Empresa
 
-- Atores:
-	- Usuário
-	- Sistema
+Painel principal da empresa com visão geral das vagas e candidaturas recebidas.
 
-- Pré-Condições:
-	Usuário deve estar cadastrado
+**Elementos:**
+- Contador de vagas publicadas
+- Contador de candidaturas pendentes de análise
+- Lista de vagas ativas com ações rápidas
+- Acesso rápido à publicação de nova vaga
 
-- Fluxo Básico:
-    - 1. Usuário fornece e-mail e senha
-	- 2. Sistema autentica o Usuário
-	- 3. Sistema redireciona o Usuário para a página inicial
+**Menu lateral:**
+- Dashboard
+- Minhas Vagas
+- Publicar Vaga
+- Candidaturas Recebidas
+- Estágios Ativos
+- Perfil da Empresa
 
-- Fluxos Alternativos:
-	- 2a. Dados do Usuário Inválidos
-		- 2a1. Sistema exibe mensagem de erro
-	- 3a. Primeio acesso do Usuário
-		- 3a1. Sistema redireciona o Usuário para a página de edição de perfil
-documentos
-@startsalt
-{
-{+Dashboard
+---
 
-{<
-+ Dashboard
-+ Vagas
-+ Minhas candidaturas
-+ Meu estágio
-+ Documentos
-}
-|
+### 6. Tela de Busca de Vagas
 
-Bem-vindo, Usuário!
+Permite que o aluno pesquise e filtre vagas disponíveis de acordo com seus interesses.
 
--------------------------
+**Filtros disponíveis:**
+- Área de atuação
+- Modalidade (presencial, remoto, híbrido)
+- Valor da bolsa (mínimo e máximo)
+- Carga horária
+- Localização
 
-Vagas disponíveis: X  
-Candidaturas: X  
-Status do estágio: Ativo  
+**Card de vaga exibe:**
+- Título da vaga
+- Nome da empresa
+- Área
+- Bolsa
+- Modalidade
+- Botão "Ver detalhes" e "Candidatar-se"
 
-}
-}
-@endsalt
-login
-@startsalt
-{
-{^Login
-Email: | "            "
-Senha: | "            "
-[ Entrar ]
---
-[ Sou aluno ] [ Sou empresa ]
-}
-}
-@endsalt
-vagas
-@startsalt
-{
-{+Vagas de Estágio
+---
 
-Buscar: | "            "
+### 7. Tela de Detalhes da Vaga
 
---------------------------------
+Exibe informações completas sobre a vaga selecionada.
 
-Estágio em TI  
-Empresa: XPTO  
-[ Ver detalhes ] [ Candidatar ]
+**Informações exibidas:**
+- Título e descrição completa
+- Requisitos e habilidades necessárias
+- Benefícios oferecidos
+- Carga horária e modalidade
+- Período de inscrição
+- Sobre a empresa
+- Botão "Candidatar-se"
 
---
+---
 
-Estágio em Administração  
-Empresa: ABC  
-[ Ver detalhes ] [ Candidatar ]
+### 8. Tela de Minhas Candidaturas — Aluno
 
-}
-}
-@endsalt
-dashboard
-@startsalt
-{
-{+Dashboard
+Lista todas as candidaturas realizadas pelo aluno, com o status atualizado de cada uma.
 
-{<
-+ Dashboard
-+ Vagas
-+ Minhas candidaturas
-+ Meu estágio
-+ Documentos
-}
-|
+**Colunas da tabela:**
+- Vaga
+- Empresa
+- Data da candidatura
+- Status (Em análise / Aprovado / Reprovado / Cancelado)
+- Ações
 
-Bem-vindo, Usuário!
+**Status representados por badges coloridos:**
+- 🟡 Em análise
+- 🟢 Aprovado
+- 🔴 Reprovado
+- ⚫ Cancelado
 
--------------------------
+---
 
-Vagas disponíveis: X  
-Candidaturas: X  
-Status do estágio: Ativo  
+### 9. Tela de Candidaturas Recebidas — Empresa
 
-}
-}
-@endsalt
+Lista os candidatos inscritos em cada vaga publicada pela empresa.
+
+**Funcionalidades:**
+- Filtro por vaga
+- Visualização do currículo do candidato
+- Ações: Aprovar / Reprovar candidato
+- Histórico de status
+
+---
+
+### 10. Tela de Acompanhamento do Estágio
+
+Disponível para o aluno cujo estágio foi aprovado e iniciado. Permite acompanhar o andamento e enviar documentos.
+
+**Informações exibidas:**
+- Empresa e supervisor
+- Data de início e previsão de término
+- Status atual
+- Plano de atividades
+- Seção de upload de documentos (relatórios mensais)
+- Histórico de validações da instituição
+
+---
+
+## Fluxo de Navegação
+
+```mermaid
+flowchart TD
+    A[Login] --> B{Tipo de usuário}
+    B -->|Aluno| C[Dashboard Aluno]
+    B -->|Empresa| D[Dashboard Empresa]
+    B -->|Instituição| E[Dashboard Instituição]
+
+    C --> F[Buscar Vagas]
+    F --> G[Detalhes da Vaga]
+    G --> H[Candidatar-se]
+    H --> I[Minhas Candidaturas]
+    I --> J[Acompanhar Estágio]
+
+    D --> K[Publicar Vaga]
+    D --> L[Candidaturas Recebidas]
+    L --> M[Aprovar/Reprovar Candidato]
+    M --> N[Estágios Ativos]
+
+    E --> O[Validar Estágios]
+    E --> P[Gerar Relatórios]
+```
+
+---
+
+## Histórico de Versão
+
+| Data | Versão | Descrição | Autor(es) |
+|---|---|---|---|
+| 06/05/2026 | 1.0 | Criação da documentação do protótipo de alta fidelidade | Davi Ito |
