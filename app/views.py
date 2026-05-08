@@ -1,5 +1,7 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+from .models import Produto
 
 
 def home(request):
-    return HttpResponse("Bem-vindo ao meu site!")
+    produtos = Produto.objects.filter(disponivel=True)[:6]
+    return render(request, "app/home.html", {"produtos": produtos})
