@@ -1,0 +1,15 @@
+@startsalt
+{
+{^"Sistema de Validação de Estágios - Login"
+
+[ E-mail:            ]
+[ Senha:             ]
+
+[ Entrar ]
+
+() Aluno
+() Coordenador
+
+}
+}
+@endsalt

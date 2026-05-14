@@ -23,7 +23,7 @@ A equipe analisou os requisitos levantados nas etapas anteriores — 5W2H, Brain
 A primeira versão do diagrama contempla as classes centrais do sistema: Usuario, Aluno, Professor, Coordenador, Estagio, Documento e Relatorio. Os relacionamentos modelam o ciclo completo de um estágio, desde o cadastro pelo aluno até a validação pelo professor e geração de relatórios pela coordenação.
 </p>
 
-[![Diagrama de Classes](assets/diagrama_classes/diagrama_v1.png)](assets/diagrama_classes/diagrama_v1.png)
+![Diagrama de Classes](assets/diagrama_classes/diagrama_de_classes.png)
 
 #### Descrição das Classes
 

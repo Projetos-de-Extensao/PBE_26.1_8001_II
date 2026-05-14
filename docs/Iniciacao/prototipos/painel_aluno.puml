@@ -1,0 +1,25 @@
+@startsalt
+{
+{^"Painel do Aluno"
+
+Bem-vindo, João
+
+----------------------
+
+Solicitações: 1
+Pendências: 2
+Status: Em análise
+
+----------------------
+
+[ Nova solicitação ]
+[ Upload de documentos ]
+[ Acompanhar status ]
+
+----------------------
+
+[ Sair ]
+
+}
+}
+@endsalt
