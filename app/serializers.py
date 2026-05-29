@@ -1,11 +1,11 @@
 from rest_framework import serializers
-from .models import Usuario, Aluno, Professor, Coordenador, Empresa, Vaga, Estagio, Documento, Relatorio
+from .models import Usuario, Aluno, Professor, Coordenador, Empresa, Vaga, Candidatura, Estagio, Documento, Relatorio
 
 
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = "__all__"
+        fields = ["id", "nome", "email", "perfil"]
 
 
 class AlunoSerializer(serializers.ModelSerializer):
@@ -38,6 +38,23 @@ class VagaSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class CandidaturaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Candidatura
+        fields = "__all__"
+
+    def validate(self, data):
+        aluno = data.get("aluno")
+        vaga = data.get("vaga")
+
+        if Candidatura.objects.filter(aluno=aluno, vaga=vaga).exists():
+            raise serializers.ValidationError(
+                "O aluno já está inscrito nesta vaga."
+            )
+
+        return data
+
+
 class EstagioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Estagio
@@ -48,6 +65,17 @@ class DocumentoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Documento
         fields = "__all__"
+
+    def validate_arquivo(self, value):
+        extensoes_permitidas = [".pdf", ".doc", ".docx"]
+        nome_arquivo = value.name.lower()
+
+        if not any(nome_arquivo.endswith(ext) for ext in extensoes_permitidas):
+            raise serializers.ValidationError(
+                "Envie apenas arquivos PDF, DOC ou DOCX."
+            )
+
+        return value
 
 
 class RelatorioSerializer(serializers.ModelSerializer):
