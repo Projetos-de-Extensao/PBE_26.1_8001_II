@@ -3,8 +3,31 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
 
-from .models import Usuario, Aluno, Professor, Coordenador, Empresa, Vaga, Candidatura, Estagio, Documento, Relatorio
-from .serializers import UsuarioSerializer, AlunoSerializer, ProfessorSerializer, CoordenadorSerializer, EmpresaSerializer, VagaSerializer, CandidaturaSerializer, EstagioSerializer, DocumentoSerializer, RelatorioSerializer
+from .models import (
+    Usuario,
+    Aluno,
+    Professor,
+    Coordenador,
+    Empresa,
+    Vaga,
+    Candidatura,
+    Estagio,
+    Documento,
+    Relatorio
+)
+
+from .serializers import (
+    UsuarioSerializer,
+    AlunoSerializer,
+    ProfessorSerializer,
+    CoordenadorSerializer,
+    EmpresaSerializer,
+    VagaSerializer,
+    CandidaturaSerializer,
+    EstagioSerializer,
+    DocumentoSerializer,
+    RelatorioSerializer
+)
 
 
 def home(request):
@@ -123,8 +146,21 @@ class CandidaturaViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=["patch"])
     def aceitar(self, request, pk=None):
         candidatura = self.get_object()
+
+        if candidatura.status != "pendente":
+            return Response(
+                {"erro": "Apenas candidaturas pendentes podem ser aceitas."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
         candidatura.status = "aceita"
         candidatura.save()
+
+        Estagio.objects.create(
+            aluno=candidatura.aluno,
+            vaga=candidatura.vaga,
+            status="pendente"
+        )
 
         serializer = self.get_serializer(candidatura)
         return Response(serializer.data)
@@ -132,6 +168,13 @@ class CandidaturaViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=["patch"])
     def rejeitar(self, request, pk=None):
         candidatura = self.get_object()
+
+        if candidatura.status != "pendente":
+            return Response(
+                {"erro": "Apenas candidaturas pendentes podem ser rejeitadas."},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
         candidatura.status = "rejeitada"
         candidatura.save()
 
