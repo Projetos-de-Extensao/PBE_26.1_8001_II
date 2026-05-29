@@ -134,7 +134,7 @@ class Estagio(models.Model):
     data_fim = models.DateField(null=True, blank=True)
 
     def __str__(self):
-        return f"{self.candidatura.aluno.usuario.nome} - {self.candidatura.vaga.titulo}"
+        return f"{self.aluno.usuario.nome} - {self.vaga.titulo}"
 
 
 class Documento(models.Model):
@@ -174,7 +174,7 @@ class Documento(models.Model):
     data_envio = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.tipo} - {self.estagio.candidatura.aluno.usuario.nome}"
+        return f"{self.tipo} - {self.estagio.aluno.usuario.nome}"
 
 
 class Relatorio(models.Model):

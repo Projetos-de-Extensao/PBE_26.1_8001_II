@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from .models import (
@@ -28,6 +29,8 @@ from .serializers import (
     DocumentoSerializer,
     RelatorioSerializer
 )
+
+from .permissions import IsAdminOrReadOnly, IsAdminUserOnly
 
 
 def home(request):
@@ -72,31 +75,37 @@ def home(request):
 class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
     serializer_class = UsuarioSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
 
 class AlunoViewSet(viewsets.ModelViewSet):
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
 
 class ProfessorViewSet(viewsets.ModelViewSet):
     queryset = Professor.objects.all()
     serializer_class = ProfessorSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
 
 class CoordenadorViewSet(viewsets.ModelViewSet):
     queryset = Coordenador.objects.all()
     serializer_class = CoordenadorSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
 
 class EmpresaViewSet(viewsets.ModelViewSet):
     queryset = Empresa.objects.all()
     serializer_class = EmpresaSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
 
 class VagaViewSet(viewsets.ModelViewSet):
     queryset = Vaga.objects.all()
     serializer_class = VagaSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
     def get_queryset(self):
         queryset = Vaga.objects.all()
@@ -124,6 +133,12 @@ class VagaViewSet(viewsets.ModelViewSet):
 class CandidaturaViewSet(viewsets.ModelViewSet):
     queryset = Candidatura.objects.all()
     serializer_class = CandidaturaSerializer
+
+    def get_permissions(self):
+        if self.action in ["aceitar", "rejeitar", "update", "partial_update", "destroy"]:
+            return [IsAdminUserOnly()]
+
+        return [IsAuthenticated()]
 
     def get_queryset(self):
         queryset = Candidatura.objects.all()
@@ -185,13 +200,16 @@ class CandidaturaViewSet(viewsets.ModelViewSet):
 class EstagioViewSet(viewsets.ModelViewSet):
     queryset = Estagio.objects.all()
     serializer_class = EstagioSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
 
 class DocumentoViewSet(viewsets.ModelViewSet):
     queryset = Documento.objects.all()
     serializer_class = DocumentoSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
 
 class RelatorioViewSet(viewsets.ModelViewSet):
     queryset = Relatorio.objects.all()
     serializer_class = RelatorioSerializer
+    permission_classes = [IsAdminOrReadOnly]
