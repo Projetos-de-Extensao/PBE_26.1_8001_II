@@ -30,18 +30,30 @@ ENV/
 env/
 .venv/
 
-# IDE
+# Django
+db.sqlite3
+media/
+
+# IDEs
 .vscode/
 .idea/
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos temporários
 *.swp
 *.swo
 *~
-.DS_Store
 
-# Dependencies
+# Dependências Front-end
 node_modules/
-.npm
+.npm/
 
-# Environment variables
+# Variáveis de ambiente
 .env
 .env.local
+
+# Logs
+*.log
