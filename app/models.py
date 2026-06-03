@@ -20,13 +20,13 @@ class UsuarioManager(models.Manager):
         usuario.save(using=self._db)
         return usuario
 
-    def get_by_natural_key(self, username):
-        return self.get(email=username)
-
     def create_superuser(self, username=None, email=None, password=None, nome=None, perfil="empresa", **extra_fields):
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
         return self.create_user(username=username, email=email, password=password, nome=nome, perfil=perfil, **extra_fields)
+
+    def get_by_natural_key(self, username):
+        return self.get(email=username)
 
 
 class Usuario(models.Model):
@@ -40,7 +40,7 @@ class Usuario(models.Model):
 
     nome = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    senha = models.CharField(max_length=255)
+    password = models.CharField(max_length=128, verbose_name="password")
     perfil = models.CharField(max_length=20, choices=PERFIL_CHOICES)
 
     is_active = models.BooleanField(default=True)
@@ -72,22 +72,30 @@ class Usuario(models.Model):
     def has_module_perms(self, app_label):
         return self.is_staff
 
+    @property
+    def senha(self):
+        return self.password
+
+    @senha.setter
+    def senha(self, value):
+        self.password = value
+
     def set_password(self, raw_password):
-        self.senha = make_password(raw_password)
+        self.password = make_password(raw_password)
 
     def check_password(self, raw_password):
-        return check_password(raw_password, self.senha)
+        return check_password(raw_password, self.password)
 
     def _senha_esta_hashed(self):
         try:
-            identify_hasher(self.senha)
+            identify_hasher(self.password)
             return True
         except (ValueError, ImproperlyConfigured):
             return False
 
     def save(self, *args, **kwargs):
-        if self.senha and not self._senha_esta_hashed():
-            self.senha = make_password(self.senha)
+        if self.password and not self._senha_esta_hashed():
+            self.password = make_password(self.password)
         super().save(*args, **kwargs)
 
 
