@@ -31,7 +31,7 @@ from .serializers import (
     RelatorioSerializer
 )
 
-from .permissions import IsAdminOrReadOnly, IsAdminUserOnly
+from .permissions import IsAdminOrReadOnly, IsAdminUserOnly, IsAluno, IsEmpresa
 
 
 def home(request):
@@ -106,7 +106,12 @@ class EmpresaViewSet(viewsets.ModelViewSet):
 class VagaViewSet(viewsets.ModelViewSet):
     queryset = Vaga.objects.all()
     serializer_class = VagaSerializer
-    permission_classes = [IsAdminOrReadOnly]
+
+    def get_permissions(self):
+        # Criar vaga (create) -> somente EMPRESA
+        if self.action == "create":
+            return [IsEmpresa()]
+        return [IsAdminOrReadOnly()]
 
     def get_queryset(self):
         queryset = Vaga.objects.all()
@@ -136,6 +141,10 @@ class CandidaturaViewSet(viewsets.ModelViewSet):
     serializer_class = CandidaturaSerializer
 
     def get_permissions(self):
+        # Candidatar-se (create) -> somente ALUNO
+        if self.action == "create":
+            return [IsAluno()]
+
         if self.action in ["aceitar", "rejeitar", "update", "partial_update", "destroy"]:
             return [IsAdminUserOnly()]
 

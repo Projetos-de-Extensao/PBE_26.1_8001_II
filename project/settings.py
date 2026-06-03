@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     "drf_spectacular",
     "app",
 ]
+AUTH_USER_MODEL = "app.Usuario"
 
 
 MIDDLEWARE = [

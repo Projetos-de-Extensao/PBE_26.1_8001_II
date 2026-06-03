@@ -1,7 +1,29 @@
 from django.db import models
+from django.contrib.auth.models import (
+    AbstractBaseUser,
+    BaseUserManager,
+    PermissionsMixin,
+)
 
 
-class Usuario(models.Model):
+class UsuarioManager(BaseUserManager):
+    def create_user(self, email, nome, perfil, password=None, **extra):
+        if not email:
+            raise ValueError("O email é obrigatório.")
+        email = self.normalize_email(email)
+        usuario = self.model(email=email, nome=nome, perfil=perfil, **extra)
+        usuario.set_password(password)
+        usuario.save(using=self._db)
+        return usuario
+
+    def create_superuser(self, email, nome, password=None, **extra):
+        extra.setdefault("is_staff", True)
+        extra.setdefault("is_superuser", True)
+        extra.setdefault("perfil", "coordenador")
+        return self.create_user(email, nome, password=password, **extra)
+
+
+class Usuario(AbstractBaseUser, PermissionsMixin):
 
     PERFIL_CHOICES = [
         ("aluno", "Aluno"),
@@ -12,8 +34,15 @@ class Usuario(models.Model):
 
     nome = models.CharField(max_length=100)
     email = models.EmailField(unique=True)
-    senha = models.CharField(max_length=255)
     perfil = models.CharField(max_length=20, choices=PERFIL_CHOICES)
+
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+
+    objects = UsuarioManager()
+
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["nome", "perfil"]
 
     def __str__(self):
         return f"{self.nome} ({self.perfil})"
