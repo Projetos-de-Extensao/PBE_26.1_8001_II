@@ -3,6 +3,7 @@ from rest_framework import viewsets, status
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from drf_spectacular.utils import extend_schema
 
 from .models import (
     Usuario,
@@ -159,6 +160,10 @@ class CandidaturaViewSet(viewsets.ModelViewSet):
         return queryset
 
     @action(detail=True, methods=["patch"])
+    @extend_schema(
+        summary="Aceitar candidatura",
+        description="Aceita uma candidatura pendente e cria um estágio associado.",
+    )
     def aceitar(self, request, pk=None):
         candidatura = self.get_object()
 
@@ -181,6 +186,10 @@ class CandidaturaViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     @action(detail=True, methods=["patch"])
+    @extend_schema(
+        summary="Rejeitar candidatura",
+        description="Rejeita uma candidatura pendente sem criar estágio.",
+    )
     def rejeitar(self, request, pk=None):
         candidatura = self.get_object()
 
