@@ -1,0 +1,24 @@
+@startsalt
+{
+{+Dashboard
+
+{<
++ Dashboard
++ Vagas
++ Minhas candidaturas
++ Meu estágio
++ Documentos
+}
+|
+
+Bem-vindo, Usuário!
+
+-------------------------
+
+Vagas disponíveis: X  
+Candidaturas: X  
+Status do estágio: Ativo  
+
+}
+}
+@endsalt
