@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Painel da Empresa - {{ empresa.usuario.nome }}</title>
+</head>
+<body>
+  <h1>Painel da Empresa: {{ empresa.usuario.nome }}</h1>
+  <p>CNPJ: {{ empresa.cnpj }}</p>
+  <h2>Vagas publicadas</h2>
+  {% if vagas %}
+    <ul>
+      {% for vaga in vagas %}
+        <li>{{ vaga.titulo }} - Área: {{ vaga.area }} - Carga: {{ vaga.carga_horaria }}h</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Sem vagas publicadas.</p>
+  {% endif %}
+
+  <p><a href="/admin/">Voltar ao Admin</a></p>
+</body>
+</html>

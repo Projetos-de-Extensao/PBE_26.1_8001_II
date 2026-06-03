@@ -72,6 +72,21 @@ def home(request):
         </ul>
     """)
 
+def empresa_dashboard(request):
+    if not request.user or not request.user.is_authenticated:
+        return HttpResponse("Acesso não autorizado", status=401)
+
+    if getattr(request.user, "perfil", None) != "empresa":
+        return HttpResponse("Acesso negado", status=403)
+
+    empresa = Empresa.objects.filter(usuario=request.user).first()
+    if not empresa:
+        return HttpResponse("Empresa não encontrada", status=404)
+
+    vagas = Vaga.objects.filter(empresa=empresa)
+
+    return render(request, "app/empresa_dashboard.html", {"empresa": empresa, "vagas": vagas})
+
 
 class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()

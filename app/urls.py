@@ -19,5 +19,6 @@ router.register(r'relatorios', views.RelatorioViewSet)
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('empresa/dashboard/', views.empresa_dashboard, name='empresa_dashboard'),
     path('api/', include(router.urls)),
 ]
