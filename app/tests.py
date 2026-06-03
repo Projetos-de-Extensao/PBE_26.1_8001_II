@@ -1,3 +1,65 @@
+from django.contrib.auth.models import User
 from django.test import TestCase
+from rest_framework.test import APIRequestFactory, force_authenticate
 
-# Create your tests here.
+from .models import Usuario
+from .permissions import IsEmpresaUserOnly
+from .serializers import UsuarioSerializer
+
+
+class IsEmpresaUserOnlyPermissionTest(TestCase):
+    def setUp(self):
+        self.factory = APIRequestFactory()
+        self.django_user_empresa = User.objects.create_user(
+            username="empresa1",
+            email="empresa1@example.com",
+            password="pass12345"
+        )
+        self.django_user_aluno = User.objects.create_user(
+            username="aluno1",
+            email="aluno1@example.com",
+            password="pass12345"
+        )
+
+        Usuario.objects.create(
+            nome="Empresa 1",
+            email="empresa1@example.com",
+            perfil="empresa",
+            senha="senha123"
+        )
+        Usuario.objects.create(
+            nome="Aluno 1",
+            email="aluno1@example.com",
+            perfil="aluno",
+            senha="senha123"
+        )
+
+    def test_empresa_user_is_allowed(self):
+        request = self.factory.get("/api/candidaturas/1/aceitar/")
+        request.user = self.django_user_empresa
+
+        permission = IsEmpresaUserOnly()
+        self.assertTrue(permission.has_permission(request, None))
+
+    def test_non_empresa_user_is_denied(self):
+        request = self.factory.get("/api/candidaturas/1/aceitar/")
+        request.user = self.django_user_aluno
+
+        permission = IsEmpresaUserOnly()
+        self.assertFalse(permission.has_permission(request, None))
+
+
+class UsuarioSerializerPasswordTest(TestCase):
+    def test_password_is_hashed_on_create(self):
+        serializer = UsuarioSerializer(data={
+            "nome": "User",
+            "email": "user@example.com",
+            "perfil": "aluno",
+            "senha": "senha_segura123"
+        })
+        self.assertTrue(serializer.is_valid(), serializer.errors)
+        usuario = serializer.save()
+
+        self.assertNotEqual(usuario.senha, "senha_segura123")
+        self.assertTrue(usuario.check_password("senha_segura123"))
+        self.assertFalse(usuario.check_password("senha_errada"))

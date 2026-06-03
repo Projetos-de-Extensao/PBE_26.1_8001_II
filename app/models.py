@@ -1,29 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import (
-    AbstractBaseUser,
-    BaseUserManager,
-    PermissionsMixin,
-)
 
 
-class UsuarioManager(BaseUserManager):
-    def create_user(self, email, nome, perfil, password=None, **extra):
-        if not email:
-            raise ValueError("O email é obrigatório.")
-        email = self.normalize_email(email)
-        usuario = self.model(email=email, nome=nome, perfil=perfil, **extra)
-        usuario.set_password(password)
-        usuario.save(using=self._db)
-        return usuario
-
-    def create_superuser(self, email, nome, password=None, **extra):
-        extra.setdefault("is_staff", True)
-        extra.setdefault("is_superuser", True)
-        extra.setdefault("perfil", "coordenador")
-        return self.create_user(email, nome, password=password, **extra)
-
-
-class Usuario(AbstractBaseUser, PermissionsMixin):
+class Usuario(models.Model):
 
     PERFIL_CHOICES = [
         ("aluno", "Aluno"),
@@ -46,6 +24,24 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return f"{self.nome} ({self.perfil})"
+
+    def set_password(self, raw_password):
+        self.senha = make_password(raw_password)
+
+    def check_password(self, raw_password):
+        return check_password(raw_password, self.senha)
+
+    def _senha_esta_hashed(self):
+        try:
+            identify_hasher(self.senha)
+            return True
+        except (ValueError, ImproperlyConfigured):
+            return False
+
+    def save(self, *args, **kwargs):
+        if self.senha and not self._senha_esta_hashed():
+            self.senha = make_password(self.senha)
+        super().save(*args, **kwargs)
 
 
 class Aluno(models.Model):
