@@ -1,8 +1,10 @@
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.test import TestCase
 from rest_framework.test import APIRequestFactory, force_authenticate
 
 from .models import Usuario
+
+User = get_user_model()
 from .permissions import IsEmpresaUserOnly
 from .serializers import UsuarioSerializer
 
@@ -13,25 +15,16 @@ class IsEmpresaUserOnlyPermissionTest(TestCase):
         self.django_user_empresa = User.objects.create_user(
             username="empresa1",
             email="empresa1@example.com",
-            password="pass12345"
+            password="pass12345",
+            nome="Empresa 1",
+            perfil="empresa"
         )
         self.django_user_aluno = User.objects.create_user(
             username="aluno1",
             email="aluno1@example.com",
-            password="pass12345"
-        )
-
-        Usuario.objects.create(
-            nome="Empresa 1",
-            email="empresa1@example.com",
-            perfil="empresa",
-            senha="senha123"
-        )
-        Usuario.objects.create(
+            password="pass12345",
             nome="Aluno 1",
-            email="aluno1@example.com",
-            perfil="aluno",
-            senha="senha123"
+            perfil="aluno"
         )
 
     def test_empresa_user_is_allowed(self):
