@@ -78,12 +78,63 @@ class UsuarioAdmin(BaseUserAdmin):
     filter_horizontal = ()
 
 
+class AlunoAdmin(admin.ModelAdmin):
+    list_display = ("get_nome_usuario", "matricula", "curso", "periodo")
+    list_filter = ("curso", "periodo")
+    search_fields = ("usuario__nome", "usuario__email", "matricula")
+    
+    def get_nome_usuario(self, obj):
+        return obj.usuario.nome
+    get_nome_usuario.short_description = "Aluno"
+
+
+class ProfessorAdmin(admin.ModelAdmin):
+    list_display = ("get_nome_usuario", "area_atuacao")
+    list_filter = ("area_atuacao",)
+    search_fields = ("usuario__nome", "usuario__email", "area_atuacao")
+    
+    def get_nome_usuario(self, obj):
+        return obj.usuario.nome
+    get_nome_usuario.short_description = "Professor"
+
+
+class CoordenadorAdmin(admin.ModelAdmin):
+    list_display = ("get_nome_usuario", "curso_coordenado")
+    list_filter = ("curso_coordenado",)
+    search_fields = ("usuario__nome", "usuario__email", "curso_coordenado")
+    
+    def get_nome_usuario(self, obj):
+        return obj.usuario.nome
+    get_nome_usuario.short_description = "Coordenador"
+
+
+class EmpresaAdmin(admin.ModelAdmin):
+    list_display = ("get_nome_usuario", "cnpj", "telefone")
+    list_filter = ("usuario__is_active",)
+    search_fields = ("usuario__nome", "usuario__email", "cnpj")
+    readonly_fields = ("cnpj",)
+    
+    def get_nome_usuario(self, obj):
+        return obj.usuario.nome
+    get_nome_usuario.short_description = "Empresa"
+
+
+class VagaAdmin(admin.ModelAdmin):
+    list_display = ("titulo", "get_empresa", "area", "carga_horaria", "ativa")
+    list_filter = ("area", "ativa")
+    search_fields = ("titulo", "empresa__usuario__nome", "area")
+    
+    def get_empresa(self, obj):
+        return obj.empresa.usuario.nome
+    get_empresa.short_description = "Empresa"
+
+
 admin.site.register(Usuario, UsuarioAdmin)
-admin.site.register(Aluno)
-admin.site.register(Professor)
-admin.site.register(Coordenador)
-admin.site.register(Empresa)
-admin.site.register(Vaga)
+admin.site.register(Aluno, AlunoAdmin)
+admin.site.register(Professor, ProfessorAdmin)
+admin.site.register(Coordenador, CoordenadorAdmin)
+admin.site.register(Empresa, EmpresaAdmin)
+admin.site.register(Vaga, VagaAdmin)
 admin.site.register(Candidatura)
 admin.site.register(Estagio)
 admin.site.register(Documento)
