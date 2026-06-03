@@ -54,6 +54,8 @@ A API usa JWT para autenticação. Para usar o Swagger UI, siga estes passos:
 - `PATCH /api/candidaturas/{id}/aceitar/`
 - `PATCH /api/candidaturas/{id}/rejeitar/`
 
+A aceitação ou rejeição de candidaturas só pode ser feita por usuários com perfil `empresa`.
+
 ## Observações
 
 - O Swagger UI está disponível em `/api/docs/`.

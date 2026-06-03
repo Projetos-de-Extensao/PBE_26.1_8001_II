@@ -3,9 +3,33 @@ from .models import Usuario, Aluno, Professor, Coordenador, Empresa, Vaga, Candi
 
 
 class UsuarioSerializer(serializers.ModelSerializer):
+    senha = serializers.CharField(write_only=True, required=False, min_length=8)
+
     class Meta:
         model = Usuario
-        fields = ["id", "nome", "email", "perfil"]
+        fields = ["id", "nome", "email", "perfil", "senha"]
+
+    def validate(self, data):
+        if self.instance is None and not data.get("senha"):
+            raise serializers.ValidationError({"senha": "Este campo é obrigatório."})
+        return data
+
+    def create(self, validated_data):
+        senha = validated_data.pop("senha", None)
+        usuario = Usuario(**validated_data)
+        if senha is not None:
+            usuario.set_password(senha)
+        usuario.save()
+        return usuario
+
+    def update(self, instance, validated_data):
+        senha = validated_data.pop("senha", None)
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        if senha is not None:
+            instance.set_password(senha)
+        instance.save()
+        return instance
 
 
 class AlunoSerializer(serializers.ModelSerializer):

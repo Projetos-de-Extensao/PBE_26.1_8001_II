@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.hashers import check_password, identify_hasher, make_password
+from django.core.exceptions import ImproperlyConfigured
 
 
 class Usuario(models.Model):
@@ -17,6 +19,24 @@ class Usuario(models.Model):
 
     def __str__(self):
         return f"{self.nome} ({self.perfil})"
+
+    def set_password(self, raw_password):
+        self.senha = make_password(raw_password)
+
+    def check_password(self, raw_password):
+        return check_password(raw_password, self.senha)
+
+    def _senha_esta_hashed(self):
+        try:
+            identify_hasher(self.senha)
+            return True
+        except (ValueError, ImproperlyConfigured):
+            return False
+
+    def save(self, *args, **kwargs):
+        if self.senha and not self._senha_esta_hashed():
+            self.senha = make_password(self.senha)
+        super().save(*args, **kwargs)
 
 
 class Aluno(models.Model):

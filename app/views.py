@@ -31,7 +31,7 @@ from .serializers import (
     RelatorioSerializer
 )
 
-from .permissions import IsAdminOrReadOnly, IsAdminUserOnly
+from .permissions import IsAdminOrReadOnly, IsAdminUserOnly, IsEmpresaUserOnly
 
 
 def home(request):
@@ -136,7 +136,10 @@ class CandidaturaViewSet(viewsets.ModelViewSet):
     serializer_class = CandidaturaSerializer
 
     def get_permissions(self):
-        if self.action in ["aceitar", "rejeitar", "update", "partial_update", "destroy"]:
+        if self.action in ["aceitar", "rejeitar"]:
+            return [IsEmpresaUserOnly()]
+
+        if self.action in ["update", "partial_update", "destroy"]:
             return [IsAdminUserOnly()]
 
         return [IsAuthenticated()]
