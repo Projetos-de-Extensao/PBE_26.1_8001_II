@@ -15,15 +15,25 @@ class UsuarioManager(models.Manager):
             perfil = extra_fields.pop("perfil", "aluno")
 
         usuario = self.model(nome=nome, email=email, perfil=perfil, **extra_fields)
+
         if password is not None:
             usuario.set_password(password)
+
         usuario.save(using=self._db)
         return usuario
 
     def create_superuser(self, username=None, email=None, password=None, nome=None, perfil="empresa", **extra_fields):
         extra_fields.setdefault("is_staff", True)
         extra_fields.setdefault("is_superuser", True)
-        return self.create_user(username=username, email=email, password=password, nome=nome, perfil=perfil, **extra_fields)
+
+        return self.create_user(
+            username=username,
+            email=email,
+            password=password,
+            nome=nome,
+            perfil=perfil,
+            **extra_fields
+        )
 
     def get_by_natural_key(self, username):
         return self.get(email=username)
@@ -57,6 +67,9 @@ class Usuario(models.Model):
 
     def __str__(self):
         return f"{self.nome} ({self.perfil})"
+
+    def get_username(self):
+        return self.email
 
     @property
     def is_authenticated(self):
@@ -96,6 +109,7 @@ class Usuario(models.Model):
     def save(self, *args, **kwargs):
         if self.password and not self._senha_esta_hashed():
             self.password = make_password(self.password)
+
         super().save(*args, **kwargs)
 
 
