@@ -73,6 +73,7 @@ def home(request):
         </ul>
     """)
 
+
 def empresa_dashboard(request):
     if not request.user or not request.user.is_authenticated:
         return HttpResponse("Acesso não autorizado", status=401)
@@ -124,9 +125,9 @@ class VagaViewSet(viewsets.ModelViewSet):
     serializer_class = VagaSerializer
 
     def get_permissions(self):
-        # Criar vaga (create) -> somente EMPRESA
         if self.action == "create":
             return [IsEmpresa()]
+
         return [IsAdminOrReadOnly()]
 
     def get_queryset(self):
@@ -157,7 +158,6 @@ class CandidaturaViewSet(viewsets.ModelViewSet):
     serializer_class = CandidaturaSerializer
 
     def get_permissions(self):
-        # Candidatar-se (create) -> somente ALUNO
         if self.action == "create":
             return [IsAluno()]
 
